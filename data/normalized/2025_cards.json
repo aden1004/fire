@@ -1,11 +1,13 @@
 {
   "year": 2025,
-  "card_count": 166,
+  "card_count": 329,
   "cards": [
     {
       "id": "card001",
-      "file": "part01_p02_L.jpg",
+      "file": "part01_p02_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p01_02.jpg",
       "round": 1,
       "book_page": 2,
@@ -17,8 +19,10 @@
     },
     {
       "id": "card002",
-      "file": "part01_p02_R.jpg",
-      "side": "R",
+      "file": "part01_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p01_02.jpg",
       "round": 1,
       "book_page": 2,
@@ -30,12 +34,14 @@
     },
     {
       "id": "card003",
-      "file": "part01_p03_L.jpg",
-      "side": "L",
-      "source_page": "p01_03.jpg",
+      "file": "part01_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_02.jpg",
       "round": 1,
-      "book_page": 3,
-      "page_marker": "25-3",
+      "book_page": 2,
+      "page_marker": "25-2",
       "subjects": [
         1
       ],
@@ -43,8 +49,25 @@
     },
     {
       "id": "card004",
-      "file": "part01_p03_R.jpg",
+      "file": "part01_p02_RB.jpg",
+      "split": true,
       "side": "R",
+      "half": "B",
+      "source_page": "p01_02.jpg",
+      "round": 1,
+      "book_page": 2,
+      "page_marker": "25-2",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card005",
+      "file": "part01_p03_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p01_03.jpg",
       "round": 1,
       "book_page": 3,
@@ -55,26 +78,15 @@
       "primary_subject": 1
     },
     {
-      "id": "card005",
-      "file": "part01_p04_L.jpg",
-      "side": "L",
-      "source_page": "p01_04.jpg",
-      "round": 1,
-      "book_page": 4,
-      "page_marker": "25-4",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
       "id": "card006",
-      "file": "part01_p04_R.jpg",
-      "side": "R",
-      "source_page": "p01_04.jpg",
+      "file": "part01_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_03.jpg",
       "round": 1,
-      "book_page": 4,
-      "page_marker": "25-4",
+      "book_page": 3,
+      "page_marker": "25-3",
       "subjects": [
         1
       ],
@@ -82,12 +94,14 @@
     },
     {
       "id": "card007",
-      "file": "part01_p05_L.jpg",
-      "side": "L",
-      "source_page": "p01_05.jpg",
+      "file": "part01_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_03.jpg",
       "round": 1,
-      "book_page": 5,
-      "page_marker": "25-5",
+      "book_page": 3,
+      "page_marker": "25-3",
       "subjects": [
         1
       ],
@@ -95,8 +109,85 @@
     },
     {
       "id": "card008",
-      "file": "part01_p05_R.jpg",
+      "file": "part01_p03_RB.jpg",
+      "split": true,
       "side": "R",
+      "half": "B",
+      "source_page": "p01_03.jpg",
+      "round": 1,
+      "book_page": 3,
+      "page_marker": "25-3",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card009",
+      "file": "part01_p04_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_04.jpg",
+      "round": 1,
+      "book_page": 4,
+      "page_marker": "25-4",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card010",
+      "file": "part01_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_04.jpg",
+      "round": 1,
+      "book_page": 4,
+      "page_marker": "25-4",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card011",
+      "file": "part01_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_04.jpg",
+      "round": 1,
+      "book_page": 4,
+      "page_marker": "25-4",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card012",
+      "file": "part01_p04_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_04.jpg",
+      "round": 1,
+      "book_page": 4,
+      "page_marker": "25-4",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card013",
+      "file": "part01_p05_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p01_05.jpg",
       "round": 1,
       "book_page": 5,
@@ -107,102 +198,240 @@
       "primary_subject": 1
     },
     {
-      "id": "card009",
-      "file": "part01_p06_L.jpg",
-      "side": "L",
-      "source_page": "p01_06.jpg",
-      "round": 1,
-      "book_page": 6,
-      "page_marker": "25-6",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card010",
-      "file": "part01_p06_R.jpg",
-      "side": "R",
-      "source_page": "p01_06.jpg",
-      "round": 1,
-      "book_page": 6,
-      "page_marker": "25-6",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card011",
-      "file": "part01_p07_L.jpg",
-      "side": "L",
-      "source_page": "p01_07.jpg",
-      "round": 1,
-      "book_page": 7,
-      "page_marker": "25-7",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card012",
-      "file": "part01_p07_R.jpg",
-      "side": "R",
-      "source_page": "p01_07.jpg",
-      "round": 1,
-      "book_page": 7,
-      "page_marker": "25-7",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card013",
-      "file": "part01_p08_L.jpg",
-      "side": "L",
-      "source_page": "p01_08.jpg",
-      "round": 1,
-      "book_page": 8,
-      "page_marker": "25-8",
-      "subjects": [
-        1,
-        2
-      ],
-      "primary_subject": 1
-    },
-    {
       "id": "card014",
-      "file": "part01_p08_R.jpg",
-      "side": "R",
-      "source_page": "p01_08.jpg",
+      "file": "part01_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_05.jpg",
       "round": 1,
-      "book_page": 8,
-      "page_marker": "25-8",
+      "book_page": 5,
+      "page_marker": "25-5",
       "subjects": [
-        1,
-        2
+        1
       ],
       "primary_subject": 1
     },
     {
       "id": "card015",
-      "file": "part01_p09_L.jpg",
-      "side": "L",
-      "source_page": "p01_09.jpg",
+      "file": "part01_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_05.jpg",
       "round": 1,
-      "book_page": 9,
-      "page_marker": "25-9",
+      "book_page": 5,
+      "page_marker": "25-5",
       "subjects": [
-        2
+        1
       ],
-      "primary_subject": 2
+      "primary_subject": 1
     },
     {
       "id": "card016",
-      "file": "part01_p09_R.jpg",
+      "file": "part01_p05_RB.jpg",
+      "split": true,
       "side": "R",
+      "half": "B",
+      "source_page": "p01_05.jpg",
+      "round": 1,
+      "book_page": 5,
+      "page_marker": "25-5",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card017",
+      "file": "part01_p06_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_06.jpg",
+      "round": 1,
+      "book_page": 6,
+      "page_marker": "25-6",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card018",
+      "file": "part01_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_06.jpg",
+      "round": 1,
+      "book_page": 6,
+      "page_marker": "25-6",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card019",
+      "file": "part01_p06_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_06.jpg",
+      "round": 1,
+      "book_page": 6,
+      "page_marker": "25-6",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card020",
+      "file": "part01_p06_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_06.jpg",
+      "round": 1,
+      "book_page": 6,
+      "page_marker": "25-6",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card021",
+      "file": "part01_p07_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_07.jpg",
+      "round": 1,
+      "book_page": 7,
+      "page_marker": "25-7",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card022",
+      "file": "part01_p07_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_07.jpg",
+      "round": 1,
+      "book_page": 7,
+      "page_marker": "25-7",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card023",
+      "file": "part01_p07_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_07.jpg",
+      "round": 1,
+      "book_page": 7,
+      "page_marker": "25-7",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card024",
+      "file": "part01_p07_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_07.jpg",
+      "round": 1,
+      "book_page": 7,
+      "page_marker": "25-7",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card025",
+      "file": "part01_p08_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_08.jpg",
+      "round": 1,
+      "book_page": 8,
+      "page_marker": "25-8",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card026",
+      "file": "part01_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_08.jpg",
+      "round": 1,
+      "book_page": 8,
+      "page_marker": "25-8",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card027",
+      "file": "part01_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_08.jpg",
+      "round": 1,
+      "book_page": 8,
+      "page_marker": "25-8",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card028",
+      "file": "part01_p08_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_08.jpg",
+      "round": 1,
+      "book_page": 8,
+      "page_marker": "25-8",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card029",
+      "file": "part01_p09_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p01_09.jpg",
       "round": 1,
       "book_page": 9,
@@ -213,208 +442,484 @@
       "primary_subject": 2
     },
     {
-      "id": "card017",
-      "file": "part01_p10_L.jpg",
-      "side": "L",
-      "source_page": "p01_10.jpg",
-      "round": 1,
-      "book_page": 10,
-      "page_marker": "25-10",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card018",
-      "file": "part01_p10_R.jpg",
-      "side": "R",
-      "source_page": "p01_10.jpg",
-      "round": 1,
-      "book_page": 10,
-      "page_marker": "25-10",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card019",
-      "file": "part01_p11_L.jpg",
-      "side": "L",
-      "source_page": "p01_11.jpg",
-      "round": 1,
-      "book_page": 11,
-      "page_marker": "25-11",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card020",
-      "file": "part01_p11_R.jpg",
-      "side": "R",
-      "source_page": "p01_11.jpg",
-      "round": 1,
-      "book_page": 11,
-      "page_marker": "25-11",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card021",
-      "file": "part01_p12_L.jpg",
-      "side": "L",
-      "source_page": "p01_12.jpg",
-      "round": 1,
-      "book_page": 12,
-      "page_marker": "25-12",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card022",
-      "file": "part01_p12_R.jpg",
-      "side": "R",
-      "source_page": "p01_12.jpg",
-      "round": 1,
-      "book_page": 12,
-      "page_marker": "25-12",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card023",
-      "file": "part01_p13_L.jpg",
-      "side": "L",
-      "source_page": "p01_13.jpg",
-      "round": 1,
-      "book_page": 13,
-      "page_marker": "25-13",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card024",
-      "file": "part01_p13_R.jpg",
-      "side": "R",
-      "source_page": "p01_13.jpg",
-      "round": 1,
-      "book_page": 13,
-      "page_marker": "25-13",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card025",
-      "file": "part01_p14_L.jpg",
-      "side": "L",
-      "source_page": "p01_14.jpg",
-      "round": 1,
-      "book_page": 14,
-      "page_marker": "25-14",
-      "subjects": [
-        2,
-        3
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card026",
-      "file": "part01_p14_R.jpg",
-      "side": "R",
-      "source_page": "p01_14.jpg",
-      "round": 1,
-      "book_page": 14,
-      "page_marker": "25-14",
-      "subjects": [
-        2,
-        3
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card027",
-      "file": "part02_p01_L.jpg",
-      "side": "L",
-      "source_page": "p02_01.jpg",
-      "round": 1,
-      "book_page": 15,
-      "page_marker": "25-15",
-      "subjects": [
-        2,
-        3
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card028",
-      "file": "part02_p01_R.jpg",
-      "side": "R",
-      "source_page": "p02_01.jpg",
-      "round": 1,
-      "book_page": 15,
-      "page_marker": "25-15",
-      "subjects": [
-        2,
-        3
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card029",
-      "file": "part02_p02_L.jpg",
-      "side": "L",
-      "source_page": "p02_02.jpg",
-      "round": 1,
-      "book_page": 16,
-      "page_marker": "25-16",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
       "id": "card030",
-      "file": "part02_p02_R.jpg",
-      "side": "R",
-      "source_page": "p02_02.jpg",
+      "file": "part01_p09_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_09.jpg",
       "round": 1,
-      "book_page": 16,
-      "page_marker": "25-16",
+      "book_page": 9,
+      "page_marker": "25-9",
       "subjects": [
-        3
+        2
       ],
-      "primary_subject": 3
+      "primary_subject": 2
     },
     {
       "id": "card031",
-      "file": "part02_p03_L.jpg",
-      "side": "L",
-      "source_page": "p02_03.jpg",
+      "file": "part01_p09_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_09.jpg",
       "round": 1,
-      "book_page": 17,
-      "page_marker": "25-17",
+      "book_page": 9,
+      "page_marker": "25-9",
       "subjects": [
-        3
+        2
       ],
-      "primary_subject": 3
+      "primary_subject": 2
     },
     {
       "id": "card032",
-      "file": "part02_p03_R.jpg",
+      "file": "part01_p09_RB.jpg",
+      "split": true,
       "side": "R",
+      "half": "B",
+      "source_page": "p01_09.jpg",
+      "round": 1,
+      "book_page": 9,
+      "page_marker": "25-9",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card033",
+      "file": "part01_p10_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_10.jpg",
+      "round": 1,
+      "book_page": 10,
+      "page_marker": "25-10",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card034",
+      "file": "part01_p10_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_10.jpg",
+      "round": 1,
+      "book_page": 10,
+      "page_marker": "25-10",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card035",
+      "file": "part01_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_10.jpg",
+      "round": 1,
+      "book_page": 10,
+      "page_marker": "25-10",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card036",
+      "file": "part01_p10_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_10.jpg",
+      "round": 1,
+      "book_page": 10,
+      "page_marker": "25-10",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card037",
+      "file": "part01_p11_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_11.jpg",
+      "round": 1,
+      "book_page": 11,
+      "page_marker": "25-11",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card038",
+      "file": "part01_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_11.jpg",
+      "round": 1,
+      "book_page": 11,
+      "page_marker": "25-11",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card039",
+      "file": "part01_p11_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_11.jpg",
+      "round": 1,
+      "book_page": 11,
+      "page_marker": "25-11",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card040",
+      "file": "part01_p11_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_11.jpg",
+      "round": 1,
+      "book_page": 11,
+      "page_marker": "25-11",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card041",
+      "file": "part01_p12_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_12.jpg",
+      "round": 1,
+      "book_page": 12,
+      "page_marker": "25-12",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card042",
+      "file": "part01_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_12.jpg",
+      "round": 1,
+      "book_page": 12,
+      "page_marker": "25-12",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card043",
+      "file": "part01_p12_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_12.jpg",
+      "round": 1,
+      "book_page": 12,
+      "page_marker": "25-12",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card044",
+      "file": "part01_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_12.jpg",
+      "round": 1,
+      "book_page": 12,
+      "page_marker": "25-12",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card045",
+      "file": "part01_p13_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_13.jpg",
+      "round": 1,
+      "book_page": 13,
+      "page_marker": "25-13",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card046",
+      "file": "part01_p13_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_13.jpg",
+      "round": 1,
+      "book_page": 13,
+      "page_marker": "25-13",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card047",
+      "file": "part01_p13_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_13.jpg",
+      "round": 1,
+      "book_page": 13,
+      "page_marker": "25-13",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card048",
+      "file": "part01_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_13.jpg",
+      "round": 1,
+      "book_page": 13,
+      "page_marker": "25-13",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card049",
+      "file": "part01_p14_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p01_14.jpg",
+      "round": 1,
+      "book_page": 14,
+      "page_marker": "25-14",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card050",
+      "file": "part01_p14_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p01_14.jpg",
+      "round": 1,
+      "book_page": 14,
+      "page_marker": "25-14",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card051",
+      "file": "part01_p14_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p01_14.jpg",
+      "round": 1,
+      "book_page": 14,
+      "page_marker": "25-14",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card052",
+      "file": "part01_p14_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p01_14.jpg",
+      "round": 1,
+      "book_page": 14,
+      "page_marker": "25-14",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card053",
+      "file": "part02_p01_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p02_01.jpg",
+      "round": 1,
+      "book_page": 15,
+      "page_marker": "25-15",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card054",
+      "file": "part02_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_01.jpg",
+      "round": 1,
+      "book_page": 15,
+      "page_marker": "25-15",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card055",
+      "file": "part02_p01_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_01.jpg",
+      "round": 1,
+      "book_page": 15,
+      "page_marker": "25-15",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card056",
+      "file": "part02_p01_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p02_01.jpg",
+      "round": 1,
+      "book_page": 15,
+      "page_marker": "25-15",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card057",
+      "file": "part02_p02_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p02_02.jpg",
+      "round": 1,
+      "book_page": 16,
+      "page_marker": "25-16",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card058",
+      "file": "part02_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_02.jpg",
+      "round": 1,
+      "book_page": 16,
+      "page_marker": "25-16",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card059",
+      "file": "part02_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_02.jpg",
+      "round": 1,
+      "book_page": 16,
+      "page_marker": "25-16",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card060",
+      "file": "part02_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p02_02.jpg",
+      "round": 1,
+      "book_page": 16,
+      "page_marker": "25-16",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card061",
+      "file": "part02_p03_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p02_03.jpg",
       "round": 1,
       "book_page": 17,
@@ -425,859 +930,544 @@
       "primary_subject": 3
     },
     {
-      "id": "card033",
-      "file": "part02_p04_L.jpg",
-      "side": "L",
-      "source_page": "p02_04.jpg",
-      "round": 1,
-      "book_page": 18,
-      "page_marker": "25-18",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card034",
-      "file": "part02_p04_R.jpg",
-      "side": "R",
-      "source_page": "p02_04.jpg",
-      "round": 1,
-      "book_page": 18,
-      "page_marker": "25-18",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card035",
-      "file": "part02_p05_L.jpg",
-      "side": "L",
-      "source_page": "p02_05.jpg",
-      "round": 1,
-      "book_page": 19,
-      "page_marker": "25-19",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card036",
-      "file": "part02_p05_R.jpg",
-      "side": "R",
-      "source_page": "p02_05.jpg",
-      "round": 1,
-      "book_page": 19,
-      "page_marker": "25-19",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card037",
-      "file": "part02_p06_L.jpg",
-      "side": "L",
-      "source_page": "p02_06.jpg",
-      "round": 1,
-      "book_page": 20,
-      "page_marker": "25-20",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card038",
-      "file": "part02_p06_R.jpg",
-      "side": "R",
-      "source_page": "p02_06.jpg",
-      "round": 1,
-      "book_page": 20,
-      "page_marker": "25-20",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card039",
-      "file": "part02_p07_L.jpg",
-      "side": "L",
-      "source_page": "p02_07.jpg",
-      "round": 1,
-      "book_page": 21,
-      "page_marker": "25-21",
-      "subjects": [
-        3,
-        4
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card040",
-      "file": "part02_p07_R.jpg",
-      "side": "R",
-      "source_page": "p02_07.jpg",
-      "round": 1,
-      "book_page": 21,
-      "page_marker": "25-21",
-      "subjects": [
-        3,
-        4
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card041",
-      "file": "part02_p08_L.jpg",
-      "side": "L",
-      "source_page": "p02_08.jpg",
-      "round": 1,
-      "book_page": 22,
-      "page_marker": "25-22",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card042",
-      "file": "part02_p08_R.jpg",
-      "side": "R",
-      "source_page": "p02_08.jpg",
-      "round": 1,
-      "book_page": 22,
-      "page_marker": "25-22",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card043",
-      "file": "part02_p09_L.jpg",
-      "side": "L",
-      "source_page": "p02_09.jpg",
-      "round": 1,
-      "book_page": 23,
-      "page_marker": "25-23",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card044",
-      "file": "part02_p09_R.jpg",
-      "side": "R",
-      "source_page": "p02_09.jpg",
-      "round": 1,
-      "book_page": 23,
-      "page_marker": "25-23",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card045",
-      "file": "part02_p10_L.jpg",
-      "side": "L",
-      "source_page": "p02_10.jpg",
-      "round": 1,
-      "book_page": 24,
-      "page_marker": "25-24",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card046",
-      "file": "part02_p10_R.jpg",
-      "side": "R",
-      "source_page": "p02_10.jpg",
-      "round": 1,
-      "book_page": 24,
-      "page_marker": "25-24",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card047",
-      "file": "part02_p11_L.jpg",
-      "side": "L",
-      "source_page": "p02_11.jpg",
-      "round": 1,
-      "book_page": 25,
-      "page_marker": "25-25",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card048",
-      "file": "part02_p11_R.jpg",
-      "side": "R",
-      "source_page": "p02_11.jpg",
-      "round": 1,
-      "book_page": 25,
-      "page_marker": "25-25",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card049",
-      "file": "part02_p12_L.jpg",
-      "side": "L",
-      "source_page": "p02_12.jpg",
-      "round": 1,
-      "book_page": 26,
-      "page_marker": "25-26",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card050",
-      "file": "part02_p12_R.jpg",
-      "side": "R",
-      "source_page": "p02_12.jpg",
-      "round": 1,
-      "book_page": 26,
-      "page_marker": "25-26",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card051",
-      "file": "part02_p13_L.jpg",
-      "side": "L",
-      "source_page": "p02_13.jpg",
-      "round": 1,
-      "book_page": 27,
-      "page_marker": "25-27",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card052",
-      "file": "part02_p13_R.jpg",
-      "side": "R",
-      "source_page": "p02_13.jpg",
-      "round": 1,
-      "book_page": 27,
-      "page_marker": "25-27",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card053",
-      "file": "part03_p01_L.jpg",
-      "side": "L",
-      "source_page": "p03_01.jpg",
-      "round": 2,
-      "book_page": 28,
-      "page_marker": "25-28",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card054",
-      "file": "part03_p01_R.jpg",
-      "side": "R",
-      "source_page": "p03_01.jpg",
-      "round": 2,
-      "book_page": 28,
-      "page_marker": "25-28",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card055",
-      "file": "part03_p02_L.jpg",
-      "side": "L",
-      "source_page": "p03_02.jpg",
-      "round": 2,
-      "book_page": 29,
-      "page_marker": "25-29",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card056",
-      "file": "part03_p02_R.jpg",
-      "side": "R",
-      "source_page": "p03_02.jpg",
-      "round": 2,
-      "book_page": 29,
-      "page_marker": "25-29",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card057",
-      "file": "part03_p03_L.jpg",
-      "side": "L",
-      "source_page": "p03_03.jpg",
-      "round": 2,
-      "book_page": 30,
-      "page_marker": "25-30",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card058",
-      "file": "part03_p03_R.jpg",
-      "side": "R",
-      "source_page": "p03_03.jpg",
-      "round": 2,
-      "book_page": 30,
-      "page_marker": "25-30",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card059",
-      "file": "part03_p04_L.jpg",
-      "side": "L",
-      "source_page": "p03_04.jpg",
-      "round": 2,
-      "book_page": 31,
-      "page_marker": "25-31",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card060",
-      "file": "part03_p04_R.jpg",
-      "side": "R",
-      "source_page": "p03_04.jpg",
-      "round": 2,
-      "book_page": 31,
-      "page_marker": "25-31",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card061",
-      "file": "part03_p05_L.jpg",
-      "side": "L",
-      "source_page": "p03_05.jpg",
-      "round": 2,
-      "book_page": 32,
-      "page_marker": "25-32",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
       "id": "card062",
-      "file": "part03_p05_R.jpg",
-      "side": "R",
-      "source_page": "p03_05.jpg",
-      "round": 2,
-      "book_page": 32,
-      "page_marker": "25-32",
+      "file": "part02_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_03.jpg",
+      "round": 1,
+      "book_page": 17,
+      "page_marker": "25-17",
       "subjects": [
-        1
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card063",
-      "file": "part03_p06_L.jpg",
-      "side": "L",
-      "source_page": "p03_06.jpg",
-      "round": 2,
-      "book_page": 33,
-      "page_marker": "25-33",
+      "file": "part02_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_03.jpg",
+      "round": 1,
+      "book_page": 17,
+      "page_marker": "25-17",
       "subjects": [
-        1
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card064",
-      "file": "part03_p06_R.jpg",
+      "file": "part02_p03_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p03_06.jpg",
-      "round": 2,
-      "book_page": 33,
-      "page_marker": "25-33",
+      "half": "B",
+      "source_page": "p02_03.jpg",
+      "round": 1,
+      "book_page": 17,
+      "page_marker": "25-17",
       "subjects": [
-        1
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card065",
-      "file": "part03_p07_L.jpg",
+      "file": "part02_p04_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p03_07.jpg",
-      "round": 2,
-      "book_page": 34,
-      "page_marker": "25-34",
+      "half": "T",
+      "source_page": "p02_04.jpg",
+      "round": 1,
+      "book_page": 18,
+      "page_marker": "25-18",
       "subjects": [
-        1,
-        2
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card066",
-      "file": "part03_p07_R.jpg",
-      "side": "R",
-      "source_page": "p03_07.jpg",
-      "round": 2,
-      "book_page": 34,
-      "page_marker": "25-34",
+      "file": "part02_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_04.jpg",
+      "round": 1,
+      "book_page": 18,
+      "page_marker": "25-18",
       "subjects": [
-        1,
-        2
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card067",
-      "file": "part03_p08_L.jpg",
-      "side": "L",
-      "source_page": "p03_08.jpg",
-      "round": 2,
-      "book_page": 35,
-      "page_marker": "25-35",
+      "file": "part02_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_04.jpg",
+      "round": 1,
+      "book_page": 18,
+      "page_marker": "25-18",
       "subjects": [
-        1,
-        2
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card068",
-      "file": "part03_p08_R.jpg",
+      "file": "part02_p04_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p03_08.jpg",
-      "round": 2,
-      "book_page": 35,
-      "page_marker": "25-35",
+      "half": "B",
+      "source_page": "p02_04.jpg",
+      "round": 1,
+      "book_page": 18,
+      "page_marker": "25-18",
       "subjects": [
-        1,
-        2
+        3
       ],
-      "primary_subject": 1
+      "primary_subject": 3
     },
     {
       "id": "card069",
-      "file": "part03_p09_L.jpg",
+      "file": "part02_p05_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p03_09.jpg",
-      "round": 2,
-      "book_page": 36,
-      "page_marker": "25-36",
+      "half": "T",
+      "source_page": "p02_05.jpg",
+      "round": 1,
+      "book_page": 19,
+      "page_marker": "25-19",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card070",
-      "file": "part03_p09_R.jpg",
-      "side": "R",
-      "source_page": "p03_09.jpg",
-      "round": 2,
-      "book_page": 36,
-      "page_marker": "25-36",
+      "file": "part02_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_05.jpg",
+      "round": 1,
+      "book_page": 19,
+      "page_marker": "25-19",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card071",
-      "file": "part03_p10_L.jpg",
-      "side": "L",
-      "source_page": "p03_10.jpg",
-      "round": 2,
-      "book_page": 37,
-      "page_marker": "25-37",
+      "file": "part02_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_05.jpg",
+      "round": 1,
+      "book_page": 19,
+      "page_marker": "25-19",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card072",
-      "file": "part03_p10_R.jpg",
+      "file": "part02_p05_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p03_10.jpg",
-      "round": 2,
-      "book_page": 37,
-      "page_marker": "25-37",
+      "half": "B",
+      "source_page": "p02_05.jpg",
+      "round": 1,
+      "book_page": 19,
+      "page_marker": "25-19",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card073",
-      "file": "part03_p11_L.jpg",
+      "file": "part02_p06_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p03_11.jpg",
-      "round": 2,
-      "book_page": 38,
-      "page_marker": "25-38",
+      "half": "T",
+      "source_page": "p02_06.jpg",
+      "round": 1,
+      "book_page": 20,
+      "page_marker": "25-20",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card074",
-      "file": "part03_p11_R.jpg",
-      "side": "R",
-      "source_page": "p03_11.jpg",
-      "round": 2,
-      "book_page": 38,
-      "page_marker": "25-38",
+      "file": "part02_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_06.jpg",
+      "round": 1,
+      "book_page": 20,
+      "page_marker": "25-20",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card075",
-      "file": "part03_p12_L.jpg",
-      "side": "L",
-      "source_page": "p03_12.jpg",
-      "round": 2,
-      "book_page": 39,
-      "page_marker": "25-39",
+      "file": "part02_p06_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_06.jpg",
+      "round": 1,
+      "book_page": 20,
+      "page_marker": "25-20",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card076",
-      "file": "part03_p12_R.jpg",
+      "file": "part02_p06_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p03_12.jpg",
-      "round": 2,
-      "book_page": 39,
-      "page_marker": "25-39",
+      "half": "B",
+      "source_page": "p02_06.jpg",
+      "round": 1,
+      "book_page": 20,
+      "page_marker": "25-20",
       "subjects": [
-        2
+        3
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card077",
-      "file": "part03_p13_L.jpg",
+      "file": "part02_p07_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p03_13.jpg",
-      "round": 2,
-      "book_page": 40,
-      "page_marker": "25-40",
+      "half": "T",
+      "source_page": "p02_07.jpg",
+      "round": 1,
+      "book_page": 21,
+      "page_marker": "25-21",
       "subjects": [
-        2
+        3,
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card078",
-      "file": "part03_p13_R.jpg",
-      "side": "R",
-      "source_page": "p03_13.jpg",
-      "round": 2,
-      "book_page": 40,
-      "page_marker": "25-40",
+      "file": "part02_p07_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_07.jpg",
+      "round": 1,
+      "book_page": 21,
+      "page_marker": "25-21",
       "subjects": [
-        2
+        3,
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card079",
-      "file": "part03_p14_L.jpg",
-      "side": "L",
-      "source_page": "p03_14.jpg",
-      "round": 2,
-      "book_page": 41,
-      "page_marker": "25-41",
+      "file": "part02_p07_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_07.jpg",
+      "round": 1,
+      "book_page": 21,
+      "page_marker": "25-21",
       "subjects": [
-        2,
-        3
+        3,
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card080",
-      "file": "part03_p14_R.jpg",
+      "file": "part02_p07_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p03_14.jpg",
-      "round": 2,
-      "book_page": 41,
-      "page_marker": "25-41",
+      "half": "B",
+      "source_page": "p02_07.jpg",
+      "round": 1,
+      "book_page": 21,
+      "page_marker": "25-21",
       "subjects": [
-        2,
-        3
+        3,
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 3
     },
     {
       "id": "card081",
-      "file": "part04_p01_L.jpg",
+      "file": "part02_p08_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p04_01.jpg",
-      "round": 2,
-      "book_page": 42,
-      "page_marker": "25-42",
+      "half": "T",
+      "source_page": "p02_08.jpg",
+      "round": 1,
+      "book_page": 22,
+      "page_marker": "25-22",
       "subjects": [
-        2,
-        3
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 4
     },
     {
       "id": "card082",
-      "file": "part04_p01_R.jpg",
-      "side": "R",
-      "source_page": "p04_01.jpg",
-      "round": 2,
-      "book_page": 42,
-      "page_marker": "25-42",
+      "file": "part02_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_08.jpg",
+      "round": 1,
+      "book_page": 22,
+      "page_marker": "25-22",
       "subjects": [
-        2,
-        3
+        4
       ],
-      "primary_subject": 2
+      "primary_subject": 4
     },
     {
       "id": "card083",
-      "file": "part04_p02_L.jpg",
-      "side": "L",
-      "source_page": "p04_02.jpg",
-      "round": 2,
-      "book_page": 43,
-      "page_marker": "25-43",
+      "file": "part02_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_08.jpg",
+      "round": 1,
+      "book_page": 22,
+      "page_marker": "25-22",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card084",
-      "file": "part04_p02_R.jpg",
+      "file": "part02_p08_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p04_02.jpg",
-      "round": 2,
-      "book_page": 43,
-      "page_marker": "25-43",
+      "half": "B",
+      "source_page": "p02_08.jpg",
+      "round": 1,
+      "book_page": 22,
+      "page_marker": "25-22",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card085",
-      "file": "part04_p03_L.jpg",
+      "file": "part02_p09_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p04_03.jpg",
-      "round": 2,
-      "book_page": 44,
-      "page_marker": "25-44",
+      "half": "T",
+      "source_page": "p02_09.jpg",
+      "round": 1,
+      "book_page": 23,
+      "page_marker": "25-23",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card086",
-      "file": "part04_p03_R.jpg",
-      "side": "R",
-      "source_page": "p04_03.jpg",
-      "round": 2,
-      "book_page": 44,
-      "page_marker": "25-44",
+      "file": "part02_p09_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_09.jpg",
+      "round": 1,
+      "book_page": 23,
+      "page_marker": "25-23",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card087",
-      "file": "part04_p04_L.jpg",
-      "side": "L",
-      "source_page": "p04_04.jpg",
-      "round": 2,
-      "book_page": 45,
-      "page_marker": "25-45",
+      "file": "part02_p09_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_09.jpg",
+      "round": 1,
+      "book_page": 23,
+      "page_marker": "25-23",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card088",
-      "file": "part04_p04_R.jpg",
+      "file": "part02_p09_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p04_04.jpg",
-      "round": 2,
-      "book_page": 45,
-      "page_marker": "25-45",
+      "half": "B",
+      "source_page": "p02_09.jpg",
+      "round": 1,
+      "book_page": 23,
+      "page_marker": "25-23",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card089",
-      "file": "part04_p05_L.jpg",
+      "file": "part02_p10_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p04_05.jpg",
-      "round": 2,
-      "book_page": 46,
-      "page_marker": "25-46",
+      "half": "T",
+      "source_page": "p02_10.jpg",
+      "round": 1,
+      "book_page": 24,
+      "page_marker": "25-24",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card090",
-      "file": "part04_p05_R.jpg",
-      "side": "R",
-      "source_page": "p04_05.jpg",
-      "round": 2,
-      "book_page": 46,
-      "page_marker": "25-46",
+      "file": "part02_p10_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_10.jpg",
+      "round": 1,
+      "book_page": 24,
+      "page_marker": "25-24",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card091",
-      "file": "part04_p06_L.jpg",
-      "side": "L",
-      "source_page": "p04_06.jpg",
-      "round": 2,
-      "book_page": 47,
-      "page_marker": "25-47",
+      "file": "part02_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_10.jpg",
+      "round": 1,
+      "book_page": 24,
+      "page_marker": "25-24",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card092",
-      "file": "part04_p06_R.jpg",
+      "file": "part02_p10_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p04_06.jpg",
-      "round": 2,
-      "book_page": 47,
-      "page_marker": "25-47",
+      "half": "B",
+      "source_page": "p02_10.jpg",
+      "round": 1,
+      "book_page": 24,
+      "page_marker": "25-24",
       "subjects": [
-        3
+        4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card093",
-      "file": "part04_p07_L.jpg",
+      "file": "part02_p11_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p04_07.jpg",
-      "round": 2,
-      "book_page": 48,
-      "page_marker": "25-48",
+      "half": "T",
+      "source_page": "p02_11.jpg",
+      "round": 1,
+      "book_page": 25,
+      "page_marker": "25-25",
       "subjects": [
-        3,
         4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card094",
-      "file": "part04_p07_R.jpg",
-      "side": "R",
-      "source_page": "p04_07.jpg",
-      "round": 2,
-      "book_page": 48,
-      "page_marker": "25-48",
+      "file": "part02_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_11.jpg",
+      "round": 1,
+      "book_page": 25,
+      "page_marker": "25-25",
       "subjects": [
-        3,
         4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card095",
-      "file": "part04_p08_L.jpg",
-      "side": "L",
-      "source_page": "p04_08.jpg",
-      "round": 2,
-      "book_page": 49,
-      "page_marker": "25-49",
+      "file": "part02_p11_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_11.jpg",
+      "round": 1,
+      "book_page": 25,
+      "page_marker": "25-25",
       "subjects": [
-        3,
         4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card096",
-      "file": "part04_p08_R.jpg",
+      "file": "part02_p11_RB.jpg",
+      "split": true,
       "side": "R",
-      "source_page": "p04_08.jpg",
-      "round": 2,
-      "book_page": 49,
-      "page_marker": "25-49",
+      "half": "B",
+      "source_page": "p02_11.jpg",
+      "round": 1,
+      "book_page": 25,
+      "page_marker": "25-25",
       "subjects": [
-        3,
         4
       ],
-      "primary_subject": 3
+      "primary_subject": 4
     },
     {
       "id": "card097",
-      "file": "part04_p09_L.jpg",
+      "file": "part02_p12_LT.jpg",
+      "split": true,
       "side": "L",
-      "source_page": "p04_09.jpg",
-      "round": 2,
-      "book_page": 50,
-      "page_marker": "25-50",
+      "half": "T",
+      "source_page": "p02_12.jpg",
+      "round": 1,
+      "book_page": 26,
+      "page_marker": "25-26",
       "subjects": [
         4
       ],
@@ -1285,8 +1475,1442 @@
     },
     {
       "id": "card098",
-      "file": "part04_p09_R.jpg",
+      "file": "part02_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_12.jpg",
+      "round": 1,
+      "book_page": 26,
+      "page_marker": "25-26",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card099",
+      "file": "part02_p12_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p02_12.jpg",
+      "round": 1,
+      "book_page": 26,
+      "page_marker": "25-26",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card100",
+      "file": "part02_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p02_12.jpg",
+      "round": 1,
+      "book_page": 26,
+      "page_marker": "25-26",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card101",
+      "file": "part02_p13_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p02_13.jpg",
+      "round": 1,
+      "book_page": 27,
+      "page_marker": "25-27",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card102",
+      "file": "part02_p13_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p02_13.jpg",
+      "round": 1,
+      "book_page": 27,
+      "page_marker": "25-27",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card103",
+      "file": "part02_p13_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p02_13.jpg",
+      "round": 1,
+      "book_page": 27,
+      "page_marker": "25-27",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card104",
+      "file": "part02_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p02_13.jpg",
+      "round": 1,
+      "book_page": 27,
+      "page_marker": "25-27",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card105",
+      "file": "part03_p01_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_01.jpg",
+      "round": 2,
+      "book_page": 28,
+      "page_marker": "25-28",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card106",
+      "file": "part03_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_01.jpg",
+      "round": 2,
+      "book_page": 28,
+      "page_marker": "25-28",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card107",
+      "file": "part03_p01_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_01.jpg",
+      "round": 2,
+      "book_page": 28,
+      "page_marker": "25-28",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card108",
+      "file": "part03_p01_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_01.jpg",
+      "round": 2,
+      "book_page": 28,
+      "page_marker": "25-28",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card109",
+      "file": "part03_p02_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_02.jpg",
+      "round": 2,
+      "book_page": 29,
+      "page_marker": "25-29",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card110",
+      "file": "part03_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_02.jpg",
+      "round": 2,
+      "book_page": 29,
+      "page_marker": "25-29",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card111",
+      "file": "part03_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_02.jpg",
+      "round": 2,
+      "book_page": 29,
+      "page_marker": "25-29",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card112",
+      "file": "part03_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_02.jpg",
+      "round": 2,
+      "book_page": 29,
+      "page_marker": "25-29",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card113",
+      "file": "part03_p03_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_03.jpg",
+      "round": 2,
+      "book_page": 30,
+      "page_marker": "25-30",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card114",
+      "file": "part03_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_03.jpg",
+      "round": 2,
+      "book_page": 30,
+      "page_marker": "25-30",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card115",
+      "file": "part03_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_03.jpg",
+      "round": 2,
+      "book_page": 30,
+      "page_marker": "25-30",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card116",
+      "file": "part03_p03_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_03.jpg",
+      "round": 2,
+      "book_page": 30,
+      "page_marker": "25-30",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card117",
+      "file": "part03_p04_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_04.jpg",
+      "round": 2,
+      "book_page": 31,
+      "page_marker": "25-31",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card118",
+      "file": "part03_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_04.jpg",
+      "round": 2,
+      "book_page": 31,
+      "page_marker": "25-31",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card119",
+      "file": "part03_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_04.jpg",
+      "round": 2,
+      "book_page": 31,
+      "page_marker": "25-31",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card120",
+      "file": "part03_p04_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_04.jpg",
+      "round": 2,
+      "book_page": 31,
+      "page_marker": "25-31",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card121",
+      "file": "part03_p05_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_05.jpg",
+      "round": 2,
+      "book_page": 32,
+      "page_marker": "25-32",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card122",
+      "file": "part03_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_05.jpg",
+      "round": 2,
+      "book_page": 32,
+      "page_marker": "25-32",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card123",
+      "file": "part03_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_05.jpg",
+      "round": 2,
+      "book_page": 32,
+      "page_marker": "25-32",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card124",
+      "file": "part03_p05_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_05.jpg",
+      "round": 2,
+      "book_page": 32,
+      "page_marker": "25-32",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card125",
+      "file": "part03_p06_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_06.jpg",
+      "round": 2,
+      "book_page": 33,
+      "page_marker": "25-33",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card126",
+      "file": "part03_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_06.jpg",
+      "round": 2,
+      "book_page": 33,
+      "page_marker": "25-33",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card127",
+      "file": "part03_p06_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_06.jpg",
+      "round": 2,
+      "book_page": 33,
+      "page_marker": "25-33",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card128",
+      "file": "part03_p06_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_06.jpg",
+      "round": 2,
+      "book_page": 33,
+      "page_marker": "25-33",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card129",
+      "file": "part03_p07_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_07.jpg",
+      "round": 2,
+      "book_page": 34,
+      "page_marker": "25-34",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card130",
+      "file": "part03_p07_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_07.jpg",
+      "round": 2,
+      "book_page": 34,
+      "page_marker": "25-34",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card131",
+      "file": "part03_p07_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_07.jpg",
+      "round": 2,
+      "book_page": 34,
+      "page_marker": "25-34",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card132",
+      "file": "part03_p07_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_07.jpg",
+      "round": 2,
+      "book_page": 34,
+      "page_marker": "25-34",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card133",
+      "file": "part03_p08_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_08.jpg",
+      "round": 2,
+      "book_page": 35,
+      "page_marker": "25-35",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card134",
+      "file": "part03_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_08.jpg",
+      "round": 2,
+      "book_page": 35,
+      "page_marker": "25-35",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card135",
+      "file": "part03_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_08.jpg",
+      "round": 2,
+      "book_page": 35,
+      "page_marker": "25-35",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card136",
+      "file": "part03_p08_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_08.jpg",
+      "round": 2,
+      "book_page": 35,
+      "page_marker": "25-35",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card137",
+      "file": "part03_p09_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_09.jpg",
+      "round": 2,
+      "book_page": 36,
+      "page_marker": "25-36",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card138",
+      "file": "part03_p09_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_09.jpg",
+      "round": 2,
+      "book_page": 36,
+      "page_marker": "25-36",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card139",
+      "file": "part03_p09_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_09.jpg",
+      "round": 2,
+      "book_page": 36,
+      "page_marker": "25-36",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card140",
+      "file": "part03_p09_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_09.jpg",
+      "round": 2,
+      "book_page": 36,
+      "page_marker": "25-36",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card141",
+      "file": "part03_p10_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_10.jpg",
+      "round": 2,
+      "book_page": 37,
+      "page_marker": "25-37",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card142",
+      "file": "part03_p10_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_10.jpg",
+      "round": 2,
+      "book_page": 37,
+      "page_marker": "25-37",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card143",
+      "file": "part03_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_10.jpg",
+      "round": 2,
+      "book_page": 37,
+      "page_marker": "25-37",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card144",
+      "file": "part03_p10_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_10.jpg",
+      "round": 2,
+      "book_page": 37,
+      "page_marker": "25-37",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card145",
+      "file": "part03_p11_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_11.jpg",
+      "round": 2,
+      "book_page": 38,
+      "page_marker": "25-38",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card146",
+      "file": "part03_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_11.jpg",
+      "round": 2,
+      "book_page": 38,
+      "page_marker": "25-38",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card147",
+      "file": "part03_p11_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_11.jpg",
+      "round": 2,
+      "book_page": 38,
+      "page_marker": "25-38",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card148",
+      "file": "part03_p11_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_11.jpg",
+      "round": 2,
+      "book_page": 38,
+      "page_marker": "25-38",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card149",
+      "file": "part03_p12_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_12.jpg",
+      "round": 2,
+      "book_page": 39,
+      "page_marker": "25-39",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card150",
+      "file": "part03_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_12.jpg",
+      "round": 2,
+      "book_page": 39,
+      "page_marker": "25-39",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card151",
+      "file": "part03_p12_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_12.jpg",
+      "round": 2,
+      "book_page": 39,
+      "page_marker": "25-39",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card152",
+      "file": "part03_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_12.jpg",
+      "round": 2,
+      "book_page": 39,
+      "page_marker": "25-39",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card153",
+      "file": "part03_p13_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_13.jpg",
+      "round": 2,
+      "book_page": 40,
+      "page_marker": "25-40",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card154",
+      "file": "part03_p13_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_13.jpg",
+      "round": 2,
+      "book_page": 40,
+      "page_marker": "25-40",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card155",
+      "file": "part03_p13_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_13.jpg",
+      "round": 2,
+      "book_page": 40,
+      "page_marker": "25-40",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card156",
+      "file": "part03_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_13.jpg",
+      "round": 2,
+      "book_page": 40,
+      "page_marker": "25-40",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card157",
+      "file": "part03_p14_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p03_14.jpg",
+      "round": 2,
+      "book_page": 41,
+      "page_marker": "25-41",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card158",
+      "file": "part03_p14_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p03_14.jpg",
+      "round": 2,
+      "book_page": 41,
+      "page_marker": "25-41",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card159",
+      "file": "part03_p14_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p03_14.jpg",
+      "round": 2,
+      "book_page": 41,
+      "page_marker": "25-41",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card160",
+      "file": "part03_p14_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p03_14.jpg",
+      "round": 2,
+      "book_page": 41,
+      "page_marker": "25-41",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card161",
+      "file": "part04_p01_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_01.jpg",
+      "round": 2,
+      "book_page": 42,
+      "page_marker": "25-42",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card162",
+      "file": "part04_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_01.jpg",
+      "round": 2,
+      "book_page": 42,
+      "page_marker": "25-42",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card163",
+      "file": "part04_p01_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_01.jpg",
+      "round": 2,
+      "book_page": 42,
+      "page_marker": "25-42",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card164",
+      "file": "part04_p01_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_01.jpg",
+      "round": 2,
+      "book_page": 42,
+      "page_marker": "25-42",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card165",
+      "file": "part04_p02_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_02.jpg",
+      "round": 2,
+      "book_page": 43,
+      "page_marker": "25-43",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card166",
+      "file": "part04_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_02.jpg",
+      "round": 2,
+      "book_page": 43,
+      "page_marker": "25-43",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card167",
+      "file": "part04_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_02.jpg",
+      "round": 2,
+      "book_page": 43,
+      "page_marker": "25-43",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card168",
+      "file": "part04_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_02.jpg",
+      "round": 2,
+      "book_page": 43,
+      "page_marker": "25-43",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card169",
+      "file": "part04_p03_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_03.jpg",
+      "round": 2,
+      "book_page": 44,
+      "page_marker": "25-44",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card170",
+      "file": "part04_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_03.jpg",
+      "round": 2,
+      "book_page": 44,
+      "page_marker": "25-44",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card171",
+      "file": "part04_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_03.jpg",
+      "round": 2,
+      "book_page": 44,
+      "page_marker": "25-44",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card172",
+      "file": "part04_p03_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_03.jpg",
+      "round": 2,
+      "book_page": 44,
+      "page_marker": "25-44",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card173",
+      "file": "part04_p04_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_04.jpg",
+      "round": 2,
+      "book_page": 45,
+      "page_marker": "25-45",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card174",
+      "file": "part04_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_04.jpg",
+      "round": 2,
+      "book_page": 45,
+      "page_marker": "25-45",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card175",
+      "file": "part04_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_04.jpg",
+      "round": 2,
+      "book_page": 45,
+      "page_marker": "25-45",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card176",
+      "file": "part04_p04_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_04.jpg",
+      "round": 2,
+      "book_page": 45,
+      "page_marker": "25-45",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card177",
+      "file": "part04_p05_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_05.jpg",
+      "round": 2,
+      "book_page": 46,
+      "page_marker": "25-46",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card178",
+      "file": "part04_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_05.jpg",
+      "round": 2,
+      "book_page": 46,
+      "page_marker": "25-46",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card179",
+      "file": "part04_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_05.jpg",
+      "round": 2,
+      "book_page": 46,
+      "page_marker": "25-46",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card180",
+      "file": "part04_p05_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_05.jpg",
+      "round": 2,
+      "book_page": 46,
+      "page_marker": "25-46",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card181",
+      "file": "part04_p06_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_06.jpg",
+      "round": 2,
+      "book_page": 47,
+      "page_marker": "25-47",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card182",
+      "file": "part04_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_06.jpg",
+      "round": 2,
+      "book_page": 47,
+      "page_marker": "25-47",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card183",
+      "file": "part04_p06_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_06.jpg",
+      "round": 2,
+      "book_page": 47,
+      "page_marker": "25-47",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card184",
+      "file": "part04_p06_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_06.jpg",
+      "round": 2,
+      "book_page": 47,
+      "page_marker": "25-47",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card185",
+      "file": "part04_p07_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_07.jpg",
+      "round": 2,
+      "book_page": 48,
+      "page_marker": "25-48",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card186",
+      "file": "part04_p07_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_07.jpg",
+      "round": 2,
+      "book_page": 48,
+      "page_marker": "25-48",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card187",
+      "file": "part04_p07_R.jpg",
+      "split": false,
+      "side": "R",
+      "source_page": "p04_07.jpg",
+      "round": 2,
+      "book_page": 48,
+      "page_marker": "25-48",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card188",
+      "file": "part04_p08_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
+      "source_page": "p04_08.jpg",
+      "round": 2,
+      "book_page": 49,
+      "page_marker": "25-49",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card189",
+      "file": "part04_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p04_08.jpg",
+      "round": 2,
+      "book_page": 49,
+      "page_marker": "25-49",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card190",
+      "file": "part04_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_08.jpg",
+      "round": 2,
+      "book_page": 49,
+      "page_marker": "25-49",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card191",
+      "file": "part04_p08_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_08.jpg",
+      "round": 2,
+      "book_page": 49,
+      "page_marker": "25-49",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card192",
+      "file": "part04_p09_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p04_09.jpg",
       "round": 2,
       "book_page": 50,
@@ -1297,9 +2921,56 @@
       "primary_subject": 4
     },
     {
-      "id": "card099",
-      "file": "part04_p10_L.jpg",
+      "id": "card193",
+      "file": "part04_p09_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p04_09.jpg",
+      "round": 2,
+      "book_page": 50,
+      "page_marker": "25-50",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card194",
+      "file": "part04_p09_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_09.jpg",
+      "round": 2,
+      "book_page": 50,
+      "page_marker": "25-50",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card195",
+      "file": "part04_p09_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_09.jpg",
+      "round": 2,
+      "book_page": 50,
+      "page_marker": "25-50",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card196",
+      "file": "part04_p10_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p04_10.jpg",
       "round": 2,
       "book_page": 51,
@@ -1310,9 +2981,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card100",
-      "file": "part04_p10_R.jpg",
-      "side": "R",
+      "id": "card197",
+      "file": "part04_p10_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p04_10.jpg",
       "round": 2,
       "book_page": 51,
@@ -1323,9 +2996,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card101",
-      "file": "part04_p11_L.jpg",
+      "id": "card198",
+      "file": "part04_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_10.jpg",
+      "round": 2,
+      "book_page": 51,
+      "page_marker": "25-51",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card199",
+      "file": "part04_p10_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_10.jpg",
+      "round": 2,
+      "book_page": 51,
+      "page_marker": "25-51",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card200",
+      "file": "part04_p11_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p04_11.jpg",
       "round": 2,
       "book_page": 52,
@@ -1336,9 +3041,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card102",
-      "file": "part04_p11_R.jpg",
-      "side": "R",
+      "id": "card201",
+      "file": "part04_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p04_11.jpg",
       "round": 2,
       "book_page": 52,
@@ -1349,9 +3056,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card103",
-      "file": "part04_p12_L.jpg",
+      "id": "card202",
+      "file": "part04_p11_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_11.jpg",
+      "round": 2,
+      "book_page": 52,
+      "page_marker": "25-52",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card203",
+      "file": "part04_p11_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_11.jpg",
+      "round": 2,
+      "book_page": 52,
+      "page_marker": "25-52",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card204",
+      "file": "part04_p12_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p04_12.jpg",
       "round": 2,
       "book_page": 53,
@@ -1362,9 +3101,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card104",
-      "file": "part04_p12_R.jpg",
-      "side": "R",
+      "id": "card205",
+      "file": "part04_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p04_12.jpg",
       "round": 2,
       "book_page": 53,
@@ -1375,9 +3116,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card105",
-      "file": "part04_p13_L.jpg",
+      "id": "card206",
+      "file": "part04_p12_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_12.jpg",
+      "round": 2,
+      "book_page": 53,
+      "page_marker": "25-53",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card207",
+      "file": "part04_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_12.jpg",
+      "round": 2,
+      "book_page": 53,
+      "page_marker": "25-53",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card208",
+      "file": "part04_p13_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p04_13.jpg",
       "round": 2,
       "book_page": 54,
@@ -1388,9 +3161,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card106",
-      "file": "part04_p13_R.jpg",
-      "side": "R",
+      "id": "card209",
+      "file": "part04_p13_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p04_13.jpg",
       "round": 2,
       "book_page": 54,
@@ -1401,9 +3176,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card107",
-      "file": "part04_p14_L.jpg",
+      "id": "card210",
+      "file": "part04_p13_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_13.jpg",
+      "round": 2,
+      "book_page": 54,
+      "page_marker": "25-54",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card211",
+      "file": "part04_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_13.jpg",
+      "round": 2,
+      "book_page": 54,
+      "page_marker": "25-54",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card212",
+      "file": "part04_p14_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p04_14.jpg",
       "round": 2,
       "book_page": 55,
@@ -1414,9 +3221,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card108",
-      "file": "part04_p14_R.jpg",
-      "side": "R",
+      "id": "card213",
+      "file": "part04_p14_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p04_14.jpg",
       "round": 2,
       "book_page": 55,
@@ -1427,9 +3236,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card109",
-      "file": "part05_p01_L.jpg",
+      "id": "card214",
+      "file": "part04_p14_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p04_14.jpg",
+      "round": 2,
+      "book_page": 55,
+      "page_marker": "25-55",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card215",
+      "file": "part04_p14_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p04_14.jpg",
+      "round": 2,
+      "book_page": 55,
+      "page_marker": "25-55",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card216",
+      "file": "part05_p01_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_01.jpg",
       "round": 3,
       "book_page": 56,
@@ -1440,9 +3281,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card110",
-      "file": "part05_p01_R.jpg",
-      "side": "R",
+      "id": "card217",
+      "file": "part05_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_01.jpg",
       "round": 3,
       "book_page": 56,
@@ -1453,9 +3296,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card111",
-      "file": "part05_p02_L.jpg",
+      "id": "card218",
+      "file": "part05_p01_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_01.jpg",
+      "round": 3,
+      "book_page": 56,
+      "page_marker": "25-56",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card219",
+      "file": "part05_p01_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_01.jpg",
+      "round": 3,
+      "book_page": 56,
+      "page_marker": "25-56",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card220",
+      "file": "part05_p02_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_02.jpg",
       "round": 3,
       "book_page": 57,
@@ -1466,9 +3341,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card112",
-      "file": "part05_p02_R.jpg",
-      "side": "R",
+      "id": "card221",
+      "file": "part05_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_02.jpg",
       "round": 3,
       "book_page": 57,
@@ -1479,9 +3356,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card113",
-      "file": "part05_p03_L.jpg",
+      "id": "card222",
+      "file": "part05_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_02.jpg",
+      "round": 3,
+      "book_page": 57,
+      "page_marker": "25-57",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card223",
+      "file": "part05_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_02.jpg",
+      "round": 3,
+      "book_page": 57,
+      "page_marker": "25-57",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card224",
+      "file": "part05_p03_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_03.jpg",
       "round": 3,
       "book_page": 58,
@@ -1492,9 +3401,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card114",
-      "file": "part05_p03_R.jpg",
-      "side": "R",
+      "id": "card225",
+      "file": "part05_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_03.jpg",
       "round": 3,
       "book_page": 58,
@@ -1505,9 +3416,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card115",
-      "file": "part05_p04_L.jpg",
+      "id": "card226",
+      "file": "part05_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_03.jpg",
+      "round": 3,
+      "book_page": 58,
+      "page_marker": "25-58",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card227",
+      "file": "part05_p03_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_03.jpg",
+      "round": 3,
+      "book_page": 58,
+      "page_marker": "25-58",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card228",
+      "file": "part05_p04_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_04.jpg",
       "round": 3,
       "book_page": 59,
@@ -1518,9 +3461,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card116",
-      "file": "part05_p04_R.jpg",
-      "side": "R",
+      "id": "card229",
+      "file": "part05_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_04.jpg",
       "round": 3,
       "book_page": 59,
@@ -1531,9 +3476,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card117",
-      "file": "part05_p05_L.jpg",
+      "id": "card230",
+      "file": "part05_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_04.jpg",
+      "round": 3,
+      "book_page": 59,
+      "page_marker": "25-59",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card231",
+      "file": "part05_p04_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_04.jpg",
+      "round": 3,
+      "book_page": 59,
+      "page_marker": "25-59",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card232",
+      "file": "part05_p05_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_05.jpg",
       "round": 3,
       "book_page": 60,
@@ -1544,9 +3521,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card118",
-      "file": "part05_p05_R.jpg",
-      "side": "R",
+      "id": "card233",
+      "file": "part05_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_05.jpg",
       "round": 3,
       "book_page": 60,
@@ -1557,9 +3536,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card119",
-      "file": "part05_p06_L.jpg",
+      "id": "card234",
+      "file": "part05_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_05.jpg",
+      "round": 3,
+      "book_page": 60,
+      "page_marker": "25-60",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card235",
+      "file": "part05_p05_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_05.jpg",
+      "round": 3,
+      "book_page": 60,
+      "page_marker": "25-60",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card236",
+      "file": "part05_p06_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_06.jpg",
       "round": 3,
       "book_page": 61,
@@ -1570,9 +3581,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card120",
-      "file": "part05_p06_R.jpg",
-      "side": "R",
+      "id": "card237",
+      "file": "part05_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_06.jpg",
       "round": 3,
       "book_page": 61,
@@ -1583,22 +3596,41 @@
       "primary_subject": 1
     },
     {
-      "id": "card121",
-      "file": "part05_p07_L.jpg",
-      "side": "L",
-      "source_page": "p05_07.jpg",
-      "round": 3,
-      "book_page": 62,
-      "page_marker": "25-62",
-      "subjects": [
-        1
-      ],
-      "primary_subject": 1
-    },
-    {
-      "id": "card122",
-      "file": "part05_p07_R.jpg",
+      "id": "card238",
+      "file": "part05_p06_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p05_06.jpg",
+      "round": 3,
+      "book_page": 61,
+      "page_marker": "25-61",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card239",
+      "file": "part05_p06_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_06.jpg",
+      "round": 3,
+      "book_page": 61,
+      "page_marker": "25-61",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card240",
+      "file": "part05_p07_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p05_07.jpg",
       "round": 3,
       "book_page": 62,
@@ -1609,9 +3641,56 @@
       "primary_subject": 1
     },
     {
-      "id": "card123",
-      "file": "part05_p08_L.jpg",
+      "id": "card241",
+      "file": "part05_p07_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p05_07.jpg",
+      "round": 3,
+      "book_page": 62,
+      "page_marker": "25-62",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card242",
+      "file": "part05_p07_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_07.jpg",
+      "round": 3,
+      "book_page": 62,
+      "page_marker": "25-62",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card243",
+      "file": "part05_p07_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_07.jpg",
+      "round": 3,
+      "book_page": 62,
+      "page_marker": "25-62",
+      "subjects": [
+        1
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card244",
+      "file": "part05_p08_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p05_08.jpg",
       "round": 3,
       "book_page": 63,
@@ -1623,9 +3702,11 @@
       "primary_subject": 1
     },
     {
-      "id": "card124",
-      "file": "part05_p08_R.jpg",
-      "side": "R",
+      "id": "card245",
+      "file": "part05_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_08.jpg",
       "round": 3,
       "book_page": 63,
@@ -1637,9 +3718,43 @@
       "primary_subject": 1
     },
     {
-      "id": "card125",
-      "file": "part05_p09_L.jpg",
+      "id": "card246",
+      "file": "part05_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_08.jpg",
+      "round": 3,
+      "book_page": 63,
+      "page_marker": "25-63",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card247",
+      "file": "part05_p08_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_08.jpg",
+      "round": 3,
+      "book_page": 63,
+      "page_marker": "25-63",
+      "subjects": [
+        1,
+        2
+      ],
+      "primary_subject": 1
+    },
+    {
+      "id": "card248",
+      "file": "part05_p09_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_09.jpg",
       "round": 3,
       "book_page": 64,
@@ -1650,9 +3765,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card126",
-      "file": "part05_p09_R.jpg",
-      "side": "R",
+      "id": "card249",
+      "file": "part05_p09_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_09.jpg",
       "round": 3,
       "book_page": 64,
@@ -1663,9 +3780,41 @@
       "primary_subject": 2
     },
     {
-      "id": "card127",
-      "file": "part05_p10_L.jpg",
+      "id": "card250",
+      "file": "part05_p09_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_09.jpg",
+      "round": 3,
+      "book_page": 64,
+      "page_marker": "25-64",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card251",
+      "file": "part05_p09_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_09.jpg",
+      "round": 3,
+      "book_page": 64,
+      "page_marker": "25-64",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card252",
+      "file": "part05_p10_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_10.jpg",
       "round": 3,
       "book_page": 65,
@@ -1676,9 +3825,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card128",
-      "file": "part05_p10_R.jpg",
-      "side": "R",
+      "id": "card253",
+      "file": "part05_p10_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_10.jpg",
       "round": 3,
       "book_page": 65,
@@ -1689,9 +3840,41 @@
       "primary_subject": 2
     },
     {
-      "id": "card129",
-      "file": "part05_p11_L.jpg",
+      "id": "card254",
+      "file": "part05_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_10.jpg",
+      "round": 3,
+      "book_page": 65,
+      "page_marker": "25-65",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card255",
+      "file": "part05_p10_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_10.jpg",
+      "round": 3,
+      "book_page": 65,
+      "page_marker": "25-65",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card256",
+      "file": "part05_p11_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_11.jpg",
       "round": 3,
       "book_page": 66,
@@ -1702,9 +3885,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card130",
-      "file": "part05_p11_R.jpg",
-      "side": "R",
+      "id": "card257",
+      "file": "part05_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_11.jpg",
       "round": 3,
       "book_page": 66,
@@ -1715,9 +3900,41 @@
       "primary_subject": 2
     },
     {
-      "id": "card131",
-      "file": "part05_p12_L.jpg",
+      "id": "card258",
+      "file": "part05_p11_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_11.jpg",
+      "round": 3,
+      "book_page": 66,
+      "page_marker": "25-66",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card259",
+      "file": "part05_p11_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_11.jpg",
+      "round": 3,
+      "book_page": 66,
+      "page_marker": "25-66",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card260",
+      "file": "part05_p12_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_12.jpg",
       "round": 3,
       "book_page": 67,
@@ -1728,9 +3945,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card132",
-      "file": "part05_p12_R.jpg",
-      "side": "R",
+      "id": "card261",
+      "file": "part05_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_12.jpg",
       "round": 3,
       "book_page": 67,
@@ -1741,9 +3960,41 @@
       "primary_subject": 2
     },
     {
-      "id": "card133",
-      "file": "part05_p13_L.jpg",
+      "id": "card262",
+      "file": "part05_p12_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_12.jpg",
+      "round": 3,
+      "book_page": 67,
+      "page_marker": "25-67",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card263",
+      "file": "part05_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_12.jpg",
+      "round": 3,
+      "book_page": 67,
+      "page_marker": "25-67",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card264",
+      "file": "part05_p13_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p05_13.jpg",
       "round": 3,
       "book_page": 68,
@@ -1754,9 +4005,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card134",
-      "file": "part05_p13_R.jpg",
-      "side": "R",
+      "id": "card265",
+      "file": "part05_p13_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p05_13.jpg",
       "round": 3,
       "book_page": 68,
@@ -1767,22 +4020,41 @@
       "primary_subject": 2
     },
     {
-      "id": "card135",
-      "file": "part05_p14_L.jpg",
-      "side": "L",
-      "source_page": "p05_14.jpg",
-      "round": 3,
-      "book_page": 69,
-      "page_marker": "25-69",
-      "subjects": [
-        2
-      ],
-      "primary_subject": 2
-    },
-    {
-      "id": "card136",
-      "file": "part05_p14_R.jpg",
+      "id": "card266",
+      "file": "part05_p13_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p05_13.jpg",
+      "round": 3,
+      "book_page": 68,
+      "page_marker": "25-68",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card267",
+      "file": "part05_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_13.jpg",
+      "round": 3,
+      "book_page": 68,
+      "page_marker": "25-68",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card268",
+      "file": "part05_p14_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p05_14.jpg",
       "round": 3,
       "book_page": 69,
@@ -1793,9 +4065,56 @@
       "primary_subject": 2
     },
     {
-      "id": "card137",
-      "file": "part06_p01_L.jpg",
+      "id": "card269",
+      "file": "part05_p14_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p05_14.jpg",
+      "round": 3,
+      "book_page": 69,
+      "page_marker": "25-69",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card270",
+      "file": "part05_p14_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p05_14.jpg",
+      "round": 3,
+      "book_page": 69,
+      "page_marker": "25-69",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card271",
+      "file": "part05_p14_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p05_14.jpg",
+      "round": 3,
+      "book_page": 69,
+      "page_marker": "25-69",
+      "subjects": [
+        2
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card272",
+      "file": "part06_p01_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_01.jpg",
       "round": 3,
       "book_page": 70,
@@ -1807,9 +4126,11 @@
       "primary_subject": 2
     },
     {
-      "id": "card138",
-      "file": "part06_p01_R.jpg",
-      "side": "R",
+      "id": "card273",
+      "file": "part06_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_01.jpg",
       "round": 3,
       "book_page": 70,
@@ -1821,9 +4142,43 @@
       "primary_subject": 2
     },
     {
-      "id": "card139",
-      "file": "part06_p02_L.jpg",
+      "id": "card274",
+      "file": "part06_p01_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_01.jpg",
+      "round": 3,
+      "book_page": 70,
+      "page_marker": "25-70",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card275",
+      "file": "part06_p01_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_01.jpg",
+      "round": 3,
+      "book_page": 70,
+      "page_marker": "25-70",
+      "subjects": [
+        2,
+        3
+      ],
+      "primary_subject": 2
+    },
+    {
+      "id": "card276",
+      "file": "part06_p02_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_02.jpg",
       "round": 3,
       "book_page": 71,
@@ -1834,9 +4189,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card140",
-      "file": "part06_p02_R.jpg",
-      "side": "R",
+      "id": "card277",
+      "file": "part06_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_02.jpg",
       "round": 3,
       "book_page": 71,
@@ -1847,9 +4204,41 @@
       "primary_subject": 3
     },
     {
-      "id": "card141",
-      "file": "part06_p03_L.jpg",
+      "id": "card278",
+      "file": "part06_p02_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_02.jpg",
+      "round": 3,
+      "book_page": 71,
+      "page_marker": "25-71",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card279",
+      "file": "part06_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_02.jpg",
+      "round": 3,
+      "book_page": 71,
+      "page_marker": "25-71",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card280",
+      "file": "part06_p03_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_03.jpg",
       "round": 3,
       "book_page": 72,
@@ -1860,9 +4249,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card142",
-      "file": "part06_p03_R.jpg",
-      "side": "R",
+      "id": "card281",
+      "file": "part06_p03_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_03.jpg",
       "round": 3,
       "book_page": 72,
@@ -1873,9 +4264,41 @@
       "primary_subject": 3
     },
     {
-      "id": "card143",
-      "file": "part06_p04_L.jpg",
+      "id": "card282",
+      "file": "part06_p03_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_03.jpg",
+      "round": 3,
+      "book_page": 72,
+      "page_marker": "25-72",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card283",
+      "file": "part06_p03_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_03.jpg",
+      "round": 3,
+      "book_page": 72,
+      "page_marker": "25-72",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card284",
+      "file": "part06_p04_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_04.jpg",
       "round": 3,
       "book_page": 73,
@@ -1886,9 +4309,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card144",
-      "file": "part06_p04_R.jpg",
-      "side": "R",
+      "id": "card285",
+      "file": "part06_p04_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_04.jpg",
       "round": 3,
       "book_page": 73,
@@ -1899,9 +4324,41 @@
       "primary_subject": 3
     },
     {
-      "id": "card145",
-      "file": "part06_p05_L.jpg",
+      "id": "card286",
+      "file": "part06_p04_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_04.jpg",
+      "round": 3,
+      "book_page": 73,
+      "page_marker": "25-73",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card287",
+      "file": "part06_p04_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_04.jpg",
+      "round": 3,
+      "book_page": 73,
+      "page_marker": "25-73",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card288",
+      "file": "part06_p05_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_05.jpg",
       "round": 3,
       "book_page": 74,
@@ -1912,9 +4369,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card146",
-      "file": "part06_p05_R.jpg",
-      "side": "R",
+      "id": "card289",
+      "file": "part06_p05_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_05.jpg",
       "round": 3,
       "book_page": 74,
@@ -1925,9 +4384,41 @@
       "primary_subject": 3
     },
     {
-      "id": "card147",
-      "file": "part06_p06_L.jpg",
+      "id": "card290",
+      "file": "part06_p05_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_05.jpg",
+      "round": 3,
+      "book_page": 74,
+      "page_marker": "25-74",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card291",
+      "file": "part06_p05_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_05.jpg",
+      "round": 3,
+      "book_page": 74,
+      "page_marker": "25-74",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card292",
+      "file": "part06_p06_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_06.jpg",
       "round": 3,
       "book_page": 75,
@@ -1938,9 +4429,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card148",
-      "file": "part06_p06_R.jpg",
-      "side": "R",
+      "id": "card293",
+      "file": "part06_p06_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_06.jpg",
       "round": 3,
       "book_page": 75,
@@ -1951,22 +4444,41 @@
       "primary_subject": 3
     },
     {
-      "id": "card149",
-      "file": "part06_p07_L.jpg",
-      "side": "L",
-      "source_page": "p06_07.jpg",
-      "round": 3,
-      "book_page": 76,
-      "page_marker": "25-76",
-      "subjects": [
-        3
-      ],
-      "primary_subject": 3
-    },
-    {
-      "id": "card150",
-      "file": "part06_p07_R.jpg",
+      "id": "card294",
+      "file": "part06_p06_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p06_06.jpg",
+      "round": 3,
+      "book_page": 75,
+      "page_marker": "25-75",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card295",
+      "file": "part06_p06_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_06.jpg",
+      "round": 3,
+      "book_page": 75,
+      "page_marker": "25-75",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card296",
+      "file": "part06_p07_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_07.jpg",
       "round": 3,
       "book_page": 76,
@@ -1977,9 +4489,56 @@
       "primary_subject": 3
     },
     {
-      "id": "card151",
-      "file": "part06_p08_L.jpg",
+      "id": "card297",
+      "file": "part06_p07_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p06_07.jpg",
+      "round": 3,
+      "book_page": 76,
+      "page_marker": "25-76",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card298",
+      "file": "part06_p07_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_07.jpg",
+      "round": 3,
+      "book_page": 76,
+      "page_marker": "25-76",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card299",
+      "file": "part06_p07_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_07.jpg",
+      "round": 3,
+      "book_page": 76,
+      "page_marker": "25-76",
+      "subjects": [
+        3
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card300",
+      "file": "part06_p08_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_08.jpg",
       "round": 3,
       "book_page": 77,
@@ -1991,9 +4550,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card152",
-      "file": "part06_p08_R.jpg",
-      "side": "R",
+      "id": "card301",
+      "file": "part06_p08_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_08.jpg",
       "round": 3,
       "book_page": 77,
@@ -2005,9 +4566,43 @@
       "primary_subject": 3
     },
     {
-      "id": "card153",
-      "file": "part06_p09_L.jpg",
+      "id": "card302",
+      "file": "part06_p08_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_08.jpg",
+      "round": 3,
+      "book_page": 77,
+      "page_marker": "25-77",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card303",
+      "file": "part06_p08_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_08.jpg",
+      "round": 3,
+      "book_page": 77,
+      "page_marker": "25-77",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card304",
+      "file": "part06_p09_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_09.jpg",
       "round": 3,
       "book_page": 78,
@@ -2019,9 +4614,11 @@
       "primary_subject": 3
     },
     {
-      "id": "card154",
-      "file": "part06_p09_R.jpg",
-      "side": "R",
+      "id": "card305",
+      "file": "part06_p09_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_09.jpg",
       "round": 3,
       "book_page": 78,
@@ -2033,22 +4630,43 @@
       "primary_subject": 3
     },
     {
-      "id": "card155",
-      "file": "part06_p10_L.jpg",
-      "side": "L",
-      "source_page": "p06_10.jpg",
-      "round": 3,
-      "book_page": 79,
-      "page_marker": "25-79",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card156",
-      "file": "part06_p10_R.jpg",
+      "id": "card306",
+      "file": "part06_p09_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p06_09.jpg",
+      "round": 3,
+      "book_page": 78,
+      "page_marker": "25-78",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card307",
+      "file": "part06_p09_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_09.jpg",
+      "round": 3,
+      "book_page": 78,
+      "page_marker": "25-78",
+      "subjects": [
+        3,
+        4
+      ],
+      "primary_subject": 3
+    },
+    {
+      "id": "card308",
+      "file": "part06_p10_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_10.jpg",
       "round": 3,
       "book_page": 79,
@@ -2059,9 +4677,56 @@
       "primary_subject": 4
     },
     {
-      "id": "card157",
-      "file": "part06_p11_L.jpg",
+      "id": "card309",
+      "file": "part06_p10_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p06_10.jpg",
+      "round": 3,
+      "book_page": 79,
+      "page_marker": "25-79",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card310",
+      "file": "part06_p10_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_10.jpg",
+      "round": 3,
+      "book_page": 79,
+      "page_marker": "25-79",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card311",
+      "file": "part06_p10_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_10.jpg",
+      "round": 3,
+      "book_page": 79,
+      "page_marker": "25-79",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card312",
+      "file": "part06_p11_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_11.jpg",
       "round": 3,
       "book_page": 80,
@@ -2072,8 +4737,24 @@
       "primary_subject": 4
     },
     {
-      "id": "card158",
+      "id": "card313",
+      "file": "part06_p11_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p06_11.jpg",
+      "round": 3,
+      "book_page": 80,
+      "page_marker": "25-80",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card314",
       "file": "part06_p11_R.jpg",
+      "split": false,
       "side": "R",
       "source_page": "p06_11.jpg",
       "round": 3,
@@ -2085,9 +4766,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card159",
-      "file": "part06_p12_L.jpg",
+      "id": "card315",
+      "file": "part06_p12_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p06_12.jpg",
       "round": 3,
       "book_page": 81,
@@ -2098,9 +4781,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card160",
-      "file": "part06_p12_R.jpg",
-      "side": "R",
+      "id": "card316",
+      "file": "part06_p12_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
       "source_page": "p06_12.jpg",
       "round": 3,
       "book_page": 81,
@@ -2111,22 +4796,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card161",
-      "file": "part06_p13_L.jpg",
-      "side": "L",
-      "source_page": "p06_13.jpg",
-      "round": 3,
-      "book_page": 82,
-      "page_marker": "25-82",
-      "subjects": [
-        4
-      ],
-      "primary_subject": 4
-    },
-    {
-      "id": "card162",
-      "file": "part06_p13_R.jpg",
+      "id": "card317",
+      "file": "part06_p12_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p06_12.jpg",
+      "round": 3,
+      "book_page": 81,
+      "page_marker": "25-81",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card318",
+      "file": "part06_p12_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_12.jpg",
+      "round": 3,
+      "book_page": 81,
+      "page_marker": "25-81",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card319",
+      "file": "part06_p13_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p06_13.jpg",
       "round": 3,
       "book_page": 82,
@@ -2137,9 +4841,56 @@
       "primary_subject": 4
     },
     {
-      "id": "card163",
-      "file": "part07_p01_L.jpg",
+      "id": "card320",
+      "file": "part06_p13_LB.jpg",
+      "split": true,
       "side": "L",
+      "half": "B",
+      "source_page": "p06_13.jpg",
+      "round": 3,
+      "book_page": 82,
+      "page_marker": "25-82",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card321",
+      "file": "part06_p13_RT.jpg",
+      "split": true,
+      "side": "R",
+      "half": "T",
+      "source_page": "p06_13.jpg",
+      "round": 3,
+      "book_page": 82,
+      "page_marker": "25-82",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card322",
+      "file": "part06_p13_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
+      "source_page": "p06_13.jpg",
+      "round": 3,
+      "book_page": 82,
+      "page_marker": "25-82",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card323",
+      "file": "part07_p01_LT.jpg",
+      "split": true,
+      "side": "L",
+      "half": "T",
       "source_page": "p07_01.jpg",
       "round": 3,
       "book_page": 83,
@@ -2150,8 +4901,24 @@
       "primary_subject": 4
     },
     {
-      "id": "card164",
+      "id": "card324",
+      "file": "part07_p01_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p07_01.jpg",
+      "round": 3,
+      "book_page": 83,
+      "page_marker": "25-83",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card325",
       "file": "part07_p01_R.jpg",
+      "split": false,
       "side": "R",
       "source_page": "p07_01.jpg",
       "round": 3,
@@ -2163,9 +4930,11 @@
       "primary_subject": 4
     },
     {
-      "id": "card165",
-      "file": "part07_p02_L.jpg",
+      "id": "card326",
+      "file": "part07_p02_LT.jpg",
+      "split": true,
       "side": "L",
+      "half": "T",
       "source_page": "p07_02.jpg",
       "round": 3,
       "book_page": 84,
@@ -2176,9 +4945,41 @@
       "primary_subject": 4
     },
     {
-      "id": "card166",
-      "file": "part07_p02_R.jpg",
+      "id": "card327",
+      "file": "part07_p02_LB.jpg",
+      "split": true,
+      "side": "L",
+      "half": "B",
+      "source_page": "p07_02.jpg",
+      "round": 3,
+      "book_page": 84,
+      "page_marker": "25-84",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card328",
+      "file": "part07_p02_RT.jpg",
+      "split": true,
       "side": "R",
+      "half": "T",
+      "source_page": "p07_02.jpg",
+      "round": 3,
+      "book_page": 84,
+      "page_marker": "25-84",
+      "subjects": [
+        4
+      ],
+      "primary_subject": 4
+    },
+    {
+      "id": "card329",
+      "file": "part07_p02_RB.jpg",
+      "split": true,
+      "side": "R",
+      "half": "B",
       "source_page": "p07_02.jpg",
       "round": 3,
       "book_page": 84,
