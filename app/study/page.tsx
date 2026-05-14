@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import {
   cardImageUrl,
   filterCards,
@@ -11,36 +11,45 @@ import {
 } from "@/lib/data";
 import {
   loadProgress,
+  recordAttempt,
+  registerCorrectAnswer,
   setCardStatus,
   setLastCard,
   setNote,
   toggleBookmark,
+  type ChoiceLabel,
   type Progress,
 } from "@/lib/storage";
 import type { SubjectId } from "@/lib/types";
 
+const CHOICES: ChoiceLabel[] = ["①", "②", "③", "④"];
+
 function StudyInner() {
   const params = useSearchParams();
-  const router = useRouter();
   const round = params.get("round") ? Number(params.get("round")) : undefined;
   const subject = params.get("subject") ? (Number(params.get("subject")) as SubjectId) : undefined;
   const startId = params.get("start") ?? undefined;
-  const reviewOnly = params.get("mode") === "review";
 
   const all = getAllCards();
-  const deck = useMemo(() => {
-    const filtered = filterCards(all, { round, subject });
-    return filtered;
-  }, [all, round, subject]);
+  const deck = useMemo(() => filterCards(all, { round, subject }), [all, round, subject]);
 
+  // All hook calls must come BEFORE any conditional return.
   const [progress, setProgress] = useState<Progress | null>(null);
   const [pos, setPos] = useState(0);
-  const [reveal, setReveal] = useState(false);
+  const [picked, setPicked] = useState<ChoiceLabel | null>(null);
+  const [feedback, setFeedback] = useState<"correct" | "wrong" | "register" | null>(null);
   const [noteText, setNoteText] = useState("");
 
-  // Initial position: 'start' query overrides; else resume from lastCardId; else 0.
+  const current = deck[pos];
+
+  // Load progress on mount
   useEffect(() => {
-    if (!progress) return;
+    loadProgress().then(setProgress);
+  }, []);
+
+  // Set initial position once progress + deck are ready
+  useEffect(() => {
+    if (!progress || deck.length === 0) return;
     let initial = 0;
     if (startId) {
       const i = deck.findIndex((c) => c.id === startId);
@@ -50,40 +59,110 @@ function StudyInner() {
       if (i >= 0) initial = i;
     }
     setPos(initial);
-  }, [progress, deck, startId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [progress?.lastCardId, deck.length, startId]);
 
-  // Reset reveal + load note whenever current card changes
-  const current = deck[pos];
+  // Reset card-local state and load note when the current card changes
   useEffect(() => {
-    setReveal(false);
-    if (current && progress) {
-      setNoteText(progress.notes[current.id] ?? "");
-      setLastCard(current.id);
+    if (!current) return;
+    setPicked(null);
+    setFeedback(null);
+    if (progress) setNoteText(progress.notes[current.id] ?? "");
+    setLastCard(current.id);
+  }, [current?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Derived: aggregate stats over the current deck
+  const stats = useMemo(() => {
+    let known = 0, review = 0, unseen = 0, registered = 0;
+    if (!progress) return { known, review, unseen, registered };
+    for (const c of deck) {
+      const s = progress.cardStatus[c.id];
+      if (s === "known") known++;
+      else if (s === "review") review++;
+      else unseen++;
+      if (progress.cardAnswers[c.id]) registered++;
     }
-  }, [current?.id, progress?.notes, current, progress]);
+    return { known, review, unseen, registered };
+  }, [deck, progress]);
 
-  useEffect(() => {
-    loadProgress().then(setProgress);
-  }, []);
+  const goNext = useCallback(() => {
+    if (pos + 1 < deck.length) setPos((p) => p + 1);
+  }, [pos, deck.length]);
 
-  // Keyboard shortcuts
+  const goPrev = useCallback(() => {
+    if (pos > 0) setPos((p) => p - 1);
+  }, [pos]);
+
+  // Pick handler: instant feedback if answer registered, else prompt to register.
+  const onPick = useCallback(async (label: ChoiceLabel) => {
+    if (!current || !progress) return;
+    setPicked(label);
+    const correctLabel = progress.cardAnswers[current.id];
+    if (!correctLabel) {
+      // First encounter — reveal the card so user can read the answer area,
+      // then ask them to register the correct answer.
+      setFeedback("register");
+      return;
+    }
+    const isCorrect = label === correctLabel;
+    setFeedback(isCorrect ? "correct" : "wrong");
+    setProgress(await recordAttempt(current.id, label, isCorrect));
+  }, [current, progress]);
+
+  const onRegister = useCallback(async (label: ChoiceLabel) => {
+    if (!current || !progress) return;
+    const next = await registerCorrectAnswer(current.id, label);
+    // Score the original pick
+    if (picked) {
+      const isCorrect = picked === label;
+      const updated = await recordAttempt(current.id, picked, isCorrect);
+      setFeedback(isCorrect ? "correct" : "wrong");
+      setProgress(updated);
+    } else {
+      setProgress(next);
+      setFeedback(null);
+    }
+  }, [current, progress, picked]);
+
+  const onBookmark = useCallback(async () => {
+    if (!current) return;
+    setProgress(await toggleBookmark(current.id));
+  }, [current]);
+
+  const onMark = useCallback(async (status: "known" | "review") => {
+    if (!current) return;
+    setProgress(await setCardStatus(current.id, status));
+    goNext();
+  }, [current, goNext]);
+
+  // Keyboard shortcuts (registered always; bail out inside if state isn't ready)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
-      if (e.key === " " || e.key === "Enter") {
-        e.preventDefault();
-        if (!reveal) setReveal(true);
-        else next();
-      } else if (e.key === "ArrowRight") next();
-      else if (e.key === "ArrowLeft") prev();
-      else if (e.key.toLowerCase() === "b") onBookmark();
+      if (!current) return;
+      if (e.key === "1") onPick("①");
+      else if (e.key === "2") onPick("②");
+      else if (e.key === "3") onPick("③");
+      else if (e.key === "4") onPick("④");
+      else if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft") goPrev();
       else if (e.key.toLowerCase() === "k") onMark("known");
       else if (e.key.toLowerCase() === "r") onMark("review");
+      else if (e.key.toLowerCase() === "b") onBookmark();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reveal, pos, deck, current?.id]);
+  }, [current, onPick, goNext, goPrev, onMark, onBookmark]);
+
+  function setParam(key: string, val: string | undefined) {
+    const sp = new URLSearchParams(params.toString());
+    if (val === undefined) sp.delete(key);
+    else sp.set(key, val);
+    const q = sp.toString();
+    return q ? `/study?${q}` : "/study";
+  }
+
+  // ===== Conditional renders (after all hooks have been declared) =====
 
   if (!progress) return <div>로딩 중…</div>;
 
@@ -97,37 +176,14 @@ function StudyInner() {
     );
   }
 
-  if (!current) return null;
+  if (!current) return <div>카드 로드 중…</div>;
 
-  function setParam(key: string, val: string | undefined) {
-    const sp = new URLSearchParams(params.toString());
-    if (val === undefined) sp.delete(key);
-    else sp.set(key, val);
-    const q = sp.toString();
-    return q ? `/study?${q}` : "/study";
-  }
-
-  function next() {
-    if (pos + 1 < deck.length) setPos(pos + 1);
-  }
-  function prev() {
-    if (pos > 0) setPos(pos - 1);
-  }
-  async function onBookmark() {
-    if (!current) return;
-    setProgress(await toggleBookmark(current.id));
-  }
-  async function onMark(status: "known" | "review") {
-    if (!current) return;
-    setProgress(await setCardStatus(current.id, status));
-    next();
-  }
-
+  const registeredAnswer = progress.cardAnswers[current.id];
+  const attempt = progress.cardAttempts[current.id];
+  const reveal = picked !== null;
   const bookmarked = progress.bookmarks.includes(current.id);
-  const status = progress.cardStatus[current.id];
-  const stats = useStats(deck, progress);
+  const cardStatus = progress.cardStatus[current.id];
 
-  void reviewOnly; // reviewOnly is informational; deck composition handled by caller
   return (
     <div className="space-y-3">
       {/* Filter bar */}
@@ -144,7 +200,7 @@ function StudyInner() {
         ))}
       </div>
 
-      {/* Progress bar */}
+      {/* Progress strip */}
       <div className="flex items-center gap-2 text-xs">
         <span className="text-stone-500">
           {pos + 1} / {deck.length}
@@ -152,7 +208,7 @@ function StudyInner() {
           <span> · 제{current.round}회</span>
         </span>
         <span className="ml-auto text-stone-500">
-          ✅ {stats.known} · 🔁 {stats.review} · ⬜ {stats.unseen}
+          ✅ {stats.known} · 🔁 {stats.review} · ⬜ {stats.unseen} · 답록 {stats.registered}/{deck.length}
         </span>
         <button onClick={onBookmark} aria-label="북마크" className="text-lg">
           {bookmarked ? "🔖" : "📑"}
@@ -165,7 +221,7 @@ function StudyInner() {
         />
       </div>
 
-      {/* Card image with reveal overlay */}
+      {/* Card image with bottom overlay until picked */}
       <div className="relative rounded-lg overflow-hidden border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-900">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -174,54 +230,98 @@ function StudyInner() {
           className="block w-full"
         />
         {!reveal && (
-          <button
-            type="button"
-            onClick={() => setReveal(true)}
-            aria-label="정답·해설 보기"
-            className="absolute bottom-0 left-0 right-0 backdrop-blur-md bg-stone-50/70 dark:bg-stone-900/70 text-stone-700 dark:text-stone-200 hover:bg-stone-50/85 dark:hover:bg-stone-900/85 transition flex items-center justify-center font-medium border-t border-stone-300 dark:border-stone-700"
+          <div
+            aria-hidden
+            className="absolute bottom-0 left-0 right-0 backdrop-blur-md bg-stone-50/70 dark:bg-stone-900/70 flex items-center justify-center border-t border-stone-300 dark:border-stone-700"
             style={{ height: "42%" }}
           >
-            <span className="text-sm">탭 / Space — 정답·해설 보기</span>
-          </button>
+            <span className="text-sm text-stone-600 dark:text-stone-300">
+              아래에서 답을 선택하면 해설 영역이 공개됩니다
+            </span>
+          </div>
         )}
       </div>
 
-      {/* Controls */}
-      <div className="grid grid-cols-3 gap-2">
+      {/* Choice buttons */}
+      <div className="grid grid-cols-4 gap-2">
+        {CHOICES.map((label) => {
+          const isPicked = picked === label;
+          const isRegistered = registeredAnswer === label && feedback !== null;
+          const showAsCorrect = (feedback === "correct" && isPicked) || (feedback === "wrong" && isRegistered);
+          const showAsWrong = feedback === "wrong" && isPicked;
+          return (
+            <button
+              key={label}
+              onClick={() => !picked && onPick(label)}
+              disabled={picked !== null}
+              className={`h-14 rounded-lg text-2xl font-bold border transition
+                ${showAsCorrect ? "bg-green-500 text-white border-green-500" :
+                  showAsWrong ? "bg-red-500 text-white border-red-500" :
+                  isPicked ? "bg-brand-700 text-white border-brand-700" :
+                  "bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border-stone-300 dark:border-stone-700 active:scale-95"}
+                disabled:opacity-100`}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Feedback panel */}
+      {feedback === "register" && (
+        <div className="rounded-lg border-2 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/40 p-3 space-y-2">
+          <div className="text-sm font-medium text-yellow-900 dark:text-yellow-100">
+            이 카드의 정답을 처음 만났어요. 위 해설에 적힌 정답을 한 번만 등록해 주세요 (다음부터 자동 채점).
+          </div>
+          <div className="grid grid-cols-4 gap-2">
+            {CHOICES.map((label) => (
+              <button
+                key={label}
+                onClick={() => onRegister(label)}
+                className="h-10 rounded bg-yellow-500 text-white text-lg font-bold"
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {feedback === "correct" && (
+        <div className="rounded-lg bg-green-500/15 border border-green-500 p-3 text-sm">
+          ✅ 정답입니다.
+          {attempt && <span className="text-stone-500"> (누적 {attempt.correct}/{attempt.correct + attempt.wrong})</span>}
+        </div>
+      )}
+      {feedback === "wrong" && (
+        <div className="rounded-lg bg-red-500/15 border border-red-500 p-3 text-sm">
+          ❌ 정답은 <span className="font-bold">{registeredAnswer}</span> · 자동으로 「다시 볼 것」에 추가됨
+          {attempt && <span className="text-stone-500"> (누적 {attempt.correct}/{attempt.correct + attempt.wrong})</span>}
+        </div>
+      )}
+
+      {/* Bottom controls */}
+      <div className="grid grid-cols-4 gap-2">
         <button
-          onClick={prev}
+          onClick={goPrev}
           disabled={pos === 0}
           className="px-3 py-2 rounded bg-stone-200 dark:bg-stone-800 text-sm disabled:opacity-40"
         >
           ← 이전
         </button>
-        {!reveal ? (
-          <button
-            onClick={() => setReveal(true)}
-            className="px-3 py-2 rounded bg-brand-700 text-white text-sm font-medium"
-          >
-            정답 보기 (Space)
-          </button>
-        ) : (
-          <div className="grid grid-cols-2 gap-1">
-            <button
-              onClick={() => onMark("review")}
-              className="px-2 py-2 rounded bg-yellow-500/90 text-white text-xs font-medium"
-              title="R"
-            >
-              🔁 다시 볼 것
-            </button>
-            <button
-              onClick={() => onMark("known")}
-              className="px-2 py-2 rounded bg-green-600 text-white text-xs font-medium"
-              title="K"
-            >
-              ✅ 익혔다
-            </button>
-          </div>
-        )}
         <button
-          onClick={next}
+          onClick={() => onMark("review")}
+          className={`px-3 py-2 rounded text-sm font-medium ${cardStatus === "review" ? "bg-yellow-600 text-white" : "bg-yellow-500/90 text-white"}`}
+        >
+          🔁 다시
+        </button>
+        <button
+          onClick={() => onMark("known")}
+          className={`px-3 py-2 rounded text-sm font-medium ${cardStatus === "known" ? "bg-green-700 text-white" : "bg-green-600 text-white"}`}
+        >
+          ✅ 익힘
+        </button>
+        <button
+          onClick={goNext}
           disabled={pos === deck.length - 1}
           className="px-3 py-2 rounded bg-stone-200 dark:bg-stone-800 text-sm disabled:opacity-40"
         >
@@ -230,13 +330,14 @@ function StudyInner() {
       </div>
 
       <div className="text-xs text-stone-500 text-center">
-        키보드: Space/Enter=정답·다음 · ←→=이동 · K=익힘 · R=다시 · B=북마크
+        키보드: 1·2·3·4=답 선택 · ←→=이동 · K=익힘 · R=다시 · B=북마크
       </div>
 
       {/* Note */}
       <details className="text-sm">
         <summary className="cursor-pointer text-stone-600 dark:text-stone-400">
-          메모 {status === "review" ? "· 🔁 다시 볼 것 표시됨" : status === "known" ? "· ✅ 익힘 표시됨" : ""}
+          메모
+          {registeredAnswer && <span className="text-stone-400"> · 정답 등록됨: {registeredAnswer}</span>}
         </summary>
         <textarea
           value={noteText}
@@ -249,19 +350,6 @@ function StudyInner() {
       </details>
     </div>
   );
-}
-
-function useStats(deck: { id: string }[], progress: Progress) {
-  return useMemo(() => {
-    let known = 0, review = 0, unseen = 0;
-    for (const c of deck) {
-      const s = progress.cardStatus[c.id];
-      if (s === "known") known++;
-      else if (s === "review") review++;
-      else unseen++;
-    }
-    return { known, review, unseen };
-  }, [deck, progress]);
 }
 
 export default function StudyPage() {

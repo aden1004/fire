@@ -4,6 +4,30 @@ const DB_NAME = "fire-exam";
 const DB_VERSION = 1;
 const STORE = "kv";
 
+export type ChoiceLabel = "①" | "②" | "③" | "④";
+export type CardStatus = "unseen" | "known" | "review";
+
+export interface Progress {
+  bookmarks: string[];                              // card ids
+  cardStatus: Record<string, CardStatus>;
+  cardAnswers: Record<string, ChoiceLabel>;         // user-registered correct answer per card
+  cardAttempts: Record<string, {
+    correct: number;
+    wrong: number;
+    lastPick?: ChoiceLabel;
+  }>;
+  notes: Record<string, string>;
+  lastCardId?: string;
+}
+
+const EMPTY: Progress = {
+  bookmarks: [],
+  cardStatus: {},
+  cardAnswers: {},
+  cardAttempts: {},
+  notes: {},
+};
+
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const req = indexedDB.open(DB_NAME, DB_VERSION);
@@ -35,20 +59,17 @@ async function put(key: string, value: unknown): Promise<void> {
   });
 }
 
-export type CardStatus = "unseen" | "known" | "review";
-
-export interface Progress {
-  bookmarks: string[];                // card ids (or page files for back-compat)
-  cardStatus: Record<string, CardStatus>;
-  notes: Record<string, string>;
-  lastCardId?: string;
-}
-
-const EMPTY: Progress = { bookmarks: [], cardStatus: {}, notes: {} };
-
 export async function loadProgress(): Promise<Progress> {
   const p = (await get<Partial<Progress>>("progress")) ?? {};
-  return { ...EMPTY, ...p, cardStatus: p.cardStatus ?? {}, notes: p.notes ?? {}, bookmarks: p.bookmarks ?? [] };
+  return {
+    ...EMPTY,
+    ...p,
+    bookmarks: p.bookmarks ?? [],
+    cardStatus: p.cardStatus ?? {},
+    cardAnswers: p.cardAnswers ?? {},
+    cardAttempts: p.cardAttempts ?? {},
+    notes: p.notes ?? {},
+  };
 }
 
 export async function saveProgress(p: Progress): Promise<void> {
@@ -68,6 +89,26 @@ export async function setCardStatus(id: string, status: CardStatus): Promise<Pro
   const p = await loadProgress();
   if (status === "unseen") delete p.cardStatus[id];
   else p.cardStatus[id] = status;
+  await saveProgress(p);
+  return p;
+}
+
+export async function registerCorrectAnswer(id: string, label: ChoiceLabel): Promise<Progress> {
+  const p = await loadProgress();
+  p.cardAnswers[id] = label;
+  await saveProgress(p);
+  return p;
+}
+
+export async function recordAttempt(id: string, picked: ChoiceLabel, isCorrect: boolean): Promise<Progress> {
+  const p = await loadProgress();
+  const cur = p.cardAttempts[id] ?? { correct: 0, wrong: 0 };
+  if (isCorrect) cur.correct += 1;
+  else cur.wrong += 1;
+  cur.lastPick = picked;
+  p.cardAttempts[id] = cur;
+  // Auto-flag wrong cards for review
+  if (!isCorrect) p.cardStatus[id] = "review";
   await saveProgress(p);
   return p;
 }
