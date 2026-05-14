@@ -1,6 +1,9 @@
 # Raw exam materials (too large / personal copy of source book)
 data/raw/
 data/cache/
+# Intermediate hints file (regenerable from OCR; contains raw OCR snippets)
+data/normalized/2025_hints.json
+data/normalized/*_report.json
 
 # Env
 .env
