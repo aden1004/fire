@@ -1,0 +1,25 @@
+# Raw exam materials (too large / personal copy of source book)
+data/raw/
+data/cache/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
