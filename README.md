@@ -42,3 +42,34 @@ python scripts\build_dataset.py
 - 원본 PDF·OCR txt·Vision 캐시는 `.gitignore`로 깃 제외.
 
 자세한 사용법은 `scripts/README.md`와 `PRD.md` 참조.
+
+## 원클릭 실행 (Windows)
+
+```powershell
+# 한 번에 끝내기 (가상환경·의존성·OCR힌트·렌더·Vision·빌드)
+.\scripts\run_pipeline.ps1 -PdfPath "C:\path\to\원본.pdf"
+
+# 우선 5페이지만 Vision 호출해 결과 검수
+.\scripts\run_pipeline.ps1 -PdfPath "C:\path\to\원본.pdf" -Limit 5
+
+# 25MB 단위로 PDF만 쪼개기 (업로드용)
+.\scripts\run_pipeline.ps1 -PdfPath "C:\path\to\원본.pdf" -Split
+```
+
+ANTHROPIC_API_KEY가 환경변수에 없으면 안전하게 입력받습니다.
+
+## Vercel 배포 (선택)
+
+데이터 빌드를 끝낸 뒤(`data/normalized/2025.json` 커밋 완료) 어디서나 웹/모바일에서
+접속하고 싶다면 Vercel 무료 티어로 배포:
+
+1. https://vercel.com 가입 후 GitHub 연동
+2. Dashboard → **Add New… → Project** → 이 저장소(`fire`) 임포트
+3. Framework Preset: **Next.js** 자동 인식, Root Directory: `.` 그대로
+4. Branch: `claude/exam-prep-dual-pdf-nDA8i` (또는 main에 머지 후 main)
+5. **Deploy** 클릭 — 약 1분 뒤 `https://<프로젝트명>.vercel.app`에서 사용 가능
+
+데이터셋이 깃에 포함되어 있어 환경변수·DB 설정 불필요. 푸시할 때마다 자동 재배포.
+모바일에서 PWA 설치: 사파리/크롬 메뉴 → "홈 화면에 추가".
+
+> 데이터는 본인이 매입한 책의 사본을 처리한 것이므로 **저장소는 Private**으로 유지하는 걸 권장합니다.
