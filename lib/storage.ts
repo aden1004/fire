@@ -6,16 +6,19 @@ const STORE = "kv";
 
 export type ChoiceLabel = "①" | "②" | "③" | "④";
 export type CardStatus = "unseen" | "known" | "review";
+export type Slot = "top" | "bottom";
+
+export interface SlotState {
+  answer?: ChoiceLabel;     // user-registered correct answer for this slot
+  correct: number;
+  wrong: number;
+  lastPick?: ChoiceLabel;
+}
 
 export interface Progress {
-  bookmarks: string[];                              // card ids
+  bookmarks: string[];
   cardStatus: Record<string, CardStatus>;
-  cardAnswers: Record<string, ChoiceLabel>;         // user-registered correct answer per card
-  cardAttempts: Record<string, {
-    correct: number;
-    wrong: number;
-    lastPick?: ChoiceLabel;
-  }>;
+  slots: Record<string, { top?: SlotState; bottom?: SlotState }>;
   notes: Record<string, string>;
   lastCardId?: string;
 }
@@ -23,8 +26,7 @@ export interface Progress {
 const EMPTY: Progress = {
   bookmarks: [],
   cardStatus: {},
-  cardAnswers: {},
-  cardAttempts: {},
+  slots: {},
   notes: {},
 };
 
@@ -59,17 +61,35 @@ async function put(key: string, value: unknown): Promise<void> {
   });
 }
 
-export async function loadProgress(): Promise<Progress> {
-  const p = (await get<Partial<Progress>>("progress")) ?? {};
+// Migrate older shape (cardAnswers/cardAttempts) into the new slots shape.
+function migrate(p: any): Progress {
+  const slots: Progress["slots"] = (p.slots ?? {}) as Progress["slots"];
+  if (p.cardAnswers || p.cardAttempts) {
+    const ans: Record<string, ChoiceLabel> = p.cardAnswers ?? {};
+    const att: Record<string, { correct: number; wrong: number; lastPick?: ChoiceLabel }> = p.cardAttempts ?? {};
+    const ids = new Set<string>([...Object.keys(ans), ...Object.keys(att)]);
+    for (const id of ids) {
+      const s: SlotState = {
+        answer: ans[id],
+        correct: att[id]?.correct ?? 0,
+        wrong: att[id]?.wrong ?? 0,
+        lastPick: att[id]?.lastPick,
+      };
+      slots[id] = { ...slots[id], top: s };
+    }
+  }
   return {
-    ...EMPTY,
-    ...p,
     bookmarks: p.bookmarks ?? [],
     cardStatus: p.cardStatus ?? {},
-    cardAnswers: p.cardAnswers ?? {},
-    cardAttempts: p.cardAttempts ?? {},
+    slots,
     notes: p.notes ?? {},
+    lastCardId: p.lastCardId,
   };
+}
+
+export async function loadProgress(): Promise<Progress> {
+  const p = (await get<any>("progress")) ?? {};
+  return { ...EMPTY, ...migrate(p) };
 }
 
 export async function saveProgress(p: Progress): Promise<void> {
@@ -93,21 +113,28 @@ export async function setCardStatus(id: string, status: CardStatus): Promise<Pro
   return p;
 }
 
-export async function registerCorrectAnswer(id: string, label: ChoiceLabel): Promise<Progress> {
+function ensureSlot(p: Progress, id: string, slot: Slot): SlotState {
+  const cur = p.slots[id] ?? {};
+  const cs: SlotState = cur[slot] ?? { correct: 0, wrong: 0 };
+  cur[slot] = cs;
+  p.slots[id] = cur;
+  return cs;
+}
+
+export async function registerCorrectAnswer(id: string, slot: Slot, label: ChoiceLabel): Promise<Progress> {
   const p = await loadProgress();
-  p.cardAnswers[id] = label;
+  const s = ensureSlot(p, id, slot);
+  s.answer = label;
   await saveProgress(p);
   return p;
 }
 
-export async function recordAttempt(id: string, picked: ChoiceLabel, isCorrect: boolean): Promise<Progress> {
+export async function recordAttempt(id: string, slot: Slot, picked: ChoiceLabel, isCorrect: boolean): Promise<Progress> {
   const p = await loadProgress();
-  const cur = p.cardAttempts[id] ?? { correct: 0, wrong: 0 };
-  if (isCorrect) cur.correct += 1;
-  else cur.wrong += 1;
-  cur.lastPick = picked;
-  p.cardAttempts[id] = cur;
-  // Auto-flag wrong cards for review
+  const s = ensureSlot(p, id, slot);
+  if (isCorrect) s.correct += 1;
+  else s.wrong += 1;
+  s.lastPick = picked;
   if (!isCorrect) p.cardStatus[id] = "review";
   await saveProgress(p);
   return p;

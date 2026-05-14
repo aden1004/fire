@@ -19,10 +19,17 @@ import {
   toggleBookmark,
   type ChoiceLabel,
   type Progress,
+  type Slot,
 } from "@/lib/storage";
 import type { SubjectId } from "@/lib/types";
 
 const CHOICES: ChoiceLabel[] = ["①", "②", "③", "④"];
+type Feedback = "correct" | "wrong" | "register" | null;
+
+interface SlotInteraction {
+  picked: ChoiceLabel | null;
+  feedback: Feedback;
+}
 
 function StudyInner() {
   const params = useSearchParams();
@@ -33,21 +40,21 @@ function StudyInner() {
   const all = getAllCards();
   const deck = useMemo(() => filterCards(all, { round, subject }), [all, round, subject]);
 
-  // All hook calls must come BEFORE any conditional return.
+  // ALL hooks at top, before any conditional returns
   const [progress, setProgress] = useState<Progress | null>(null);
   const [pos, setPos] = useState(0);
-  const [picked, setPicked] = useState<ChoiceLabel | null>(null);
-  const [feedback, setFeedback] = useState<"correct" | "wrong" | "register" | null>(null);
+  const [revealed, setRevealed] = useState(false);
+  const [topState, setTopState] = useState<SlotInteraction>({ picked: null, feedback: null });
+  const [bottomState, setBottomState] = useState<SlotInteraction>({ picked: null, feedback: null });
+  const [showBottom, setShowBottom] = useState(false);
   const [noteText, setNoteText] = useState("");
 
   const current = deck[pos];
 
-  // Load progress on mount
   useEffect(() => {
     loadProgress().then(setProgress);
   }, []);
 
-  // Set initial position once progress + deck are ready
   useEffect(() => {
     if (!progress || deck.length === 0) return;
     let initial = 0;
@@ -62,16 +69,18 @@ function StudyInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress?.lastCardId, deck.length, startId]);
 
-  // Reset card-local state and load note when the current card changes
   useEffect(() => {
     if (!current) return;
-    setPicked(null);
-    setFeedback(null);
+    setRevealed(false);
+    setTopState({ picked: null, feedback: null });
+    setBottomState({ picked: null, feedback: null });
+    // Auto-show bottom slot if user previously registered an answer there
+    const hasBottom = !!progress?.slots[current.id]?.bottom?.answer;
+    setShowBottom(hasBottom);
     if (progress) setNoteText(progress.notes[current.id] ?? "");
     setLastCard(current.id);
   }, [current?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Derived: aggregate stats over the current deck
   const stats = useMemo(() => {
     let known = 0, review = 0, unseen = 0, registered = 0;
     if (!progress) return { known, review, unseen, registered };
@@ -80,7 +89,7 @@ function StudyInner() {
       if (s === "known") known++;
       else if (s === "review") review++;
       else unseen++;
-      if (progress.cardAnswers[c.id]) registered++;
+      if (progress.slots[c.id]?.top?.answer || progress.slots[c.id]?.bottom?.answer) registered++;
     }
     return { known, review, unseen, registered };
   }, [deck, progress]);
@@ -93,36 +102,36 @@ function StudyInner() {
     if (pos > 0) setPos((p) => p - 1);
   }, [pos]);
 
-  // Pick handler: instant feedback if answer registered, else prompt to register.
-  const onPick = useCallback(async (label: ChoiceLabel) => {
+  const onPick = useCallback(async (slot: Slot, label: ChoiceLabel) => {
     if (!current || !progress) return;
-    setPicked(label);
-    const correctLabel = progress.cardAnswers[current.id];
+    setRevealed(true);
+    const setState = slot === "top" ? setTopState : setBottomState;
+    const slotData = progress.slots[current.id]?.[slot];
+    const correctLabel = slotData?.answer;
     if (!correctLabel) {
-      // First encounter — reveal the card so user can read the answer area,
-      // then ask them to register the correct answer.
-      setFeedback("register");
+      setState({ picked: label, feedback: "register" });
       return;
     }
     const isCorrect = label === correctLabel;
-    setFeedback(isCorrect ? "correct" : "wrong");
-    setProgress(await recordAttempt(current.id, label, isCorrect));
+    setState({ picked: label, feedback: isCorrect ? "correct" : "wrong" });
+    setProgress(await recordAttempt(current.id, slot, label, isCorrect));
   }, [current, progress]);
 
-  const onRegister = useCallback(async (label: ChoiceLabel) => {
+  const onRegister = useCallback(async (slot: Slot, correctLabel: ChoiceLabel) => {
     if (!current || !progress) return;
-    const next = await registerCorrectAnswer(current.id, label);
-    // Score the original pick
-    if (picked) {
-      const isCorrect = picked === label;
-      const updated = await recordAttempt(current.id, picked, isCorrect);
-      setFeedback(isCorrect ? "correct" : "wrong");
-      setProgress(updated);
+    const next1 = await registerCorrectAnswer(current.id, slot, correctLabel);
+    const setState = slot === "top" ? setTopState : setBottomState;
+    const interaction = slot === "top" ? topState : bottomState;
+    if (interaction.picked) {
+      const isCorrect = interaction.picked === correctLabel;
+      const next2 = await recordAttempt(current.id, slot, interaction.picked, isCorrect);
+      setState({ picked: interaction.picked, feedback: isCorrect ? "correct" : "wrong" });
+      setProgress(next2);
     } else {
-      setProgress(next);
-      setFeedback(null);
+      setProgress(next1);
+      setState({ picked: null, feedback: null });
     }
-  }, [current, progress, picked]);
+  }, [current, progress, topState, bottomState]);
 
   const onBookmark = useCallback(async () => {
     if (!current) return;
@@ -135,24 +144,26 @@ function StudyInner() {
     goNext();
   }, [current, goNext]);
 
-  // Keyboard shortcuts (registered always; bail out inside if state isn't ready)
+  // Keyboard: 1/2/3/4 picks for TOP slot (most common). Hold shift for bottom.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
       if (!current) return;
-      if (e.key === "1") onPick("①");
-      else if (e.key === "2") onPick("②");
-      else if (e.key === "3") onPick("③");
-      else if (e.key === "4") onPick("④");
+      const slot: Slot = e.shiftKey || showBottom && topState.feedback ? "bottom" : "top";
+      if (e.key === "1") onPick(slot, "①");
+      else if (e.key === "2") onPick(slot, "②");
+      else if (e.key === "3") onPick(slot, "③");
+      else if (e.key === "4") onPick(slot, "④");
       else if (e.key === "ArrowRight") goNext();
       else if (e.key === "ArrowLeft") goPrev();
       else if (e.key.toLowerCase() === "k") onMark("known");
       else if (e.key.toLowerCase() === "r") onMark("review");
       else if (e.key.toLowerCase() === "b") onBookmark();
+      else if (e.key.toLowerCase() === "a") setShowBottom((v) => !v);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [current, onPick, goNext, goPrev, onMark, onBookmark]);
+  }, [current, onPick, goNext, goPrev, onMark, onBookmark, showBottom, topState.feedback]);
 
   function setParam(key: string, val: string | undefined) {
     const sp = new URLSearchParams(params.toString());
@@ -161,8 +172,6 @@ function StudyInner() {
     const q = sp.toString();
     return q ? `/study?${q}` : "/study";
   }
-
-  // ===== Conditional renders (after all hooks have been declared) =====
 
   if (!progress) return <div>로딩 중…</div>;
 
@@ -175,12 +184,9 @@ function StudyInner() {
       </div>
     );
   }
-
   if (!current) return <div>카드 로드 중…</div>;
 
-  const registeredAnswer = progress.cardAnswers[current.id];
-  const attempt = progress.cardAttempts[current.id];
-  const reveal = picked !== null;
+  const slotData = progress.slots[current.id] ?? {};
   const bookmarked = progress.bookmarks.includes(current.id);
   const cardStatus = progress.cardStatus[current.id];
 
@@ -208,7 +214,7 @@ function StudyInner() {
           <span> · 제{current.round}회</span>
         </span>
         <span className="ml-auto text-stone-500">
-          ✅ {stats.known} · 🔁 {stats.review} · ⬜ {stats.unseen} · 답록 {stats.registered}/{deck.length}
+          ✅ {stats.known} · 🔁 {stats.review} · ⬜ {stats.unseen}
         </span>
         <button onClick={onBookmark} aria-label="북마크" className="text-lg">
           {bookmarked ? "🔖" : "📑"}
@@ -221,7 +227,7 @@ function StudyInner() {
         />
       </div>
 
-      {/* Card image with bottom overlay until picked */}
+      {/* Card image with reveal overlay */}
       <div className="relative rounded-lg overflow-hidden border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-900">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -229,74 +235,56 @@ function StudyInner() {
           alt={current.id}
           className="block w-full"
         />
-        {!reveal && (
+        {!revealed && (
           <div
             aria-hidden
             className="absolute bottom-0 left-0 right-0 backdrop-blur-md bg-stone-50/70 dark:bg-stone-900/70 flex items-center justify-center border-t border-stone-300 dark:border-stone-700"
             style={{ height: "42%" }}
           >
             <span className="text-sm text-stone-600 dark:text-stone-300">
-              아래에서 답을 선택하면 해설 영역이 공개됩니다
+              아래 버튼을 누르면 정답·해설 영역이 공개됩니다
             </span>
           </div>
         )}
       </div>
 
-      {/* Choice buttons */}
-      <div className="grid grid-cols-4 gap-2">
-        {CHOICES.map((label) => {
-          const isPicked = picked === label;
-          const isRegistered = registeredAnswer === label && feedback !== null;
-          const showAsCorrect = (feedback === "correct" && isPicked) || (feedback === "wrong" && isRegistered);
-          const showAsWrong = feedback === "wrong" && isPicked;
-          return (
-            <button
-              key={label}
-              onClick={() => !picked && onPick(label)}
-              disabled={picked !== null}
-              className={`h-14 rounded-lg text-2xl font-bold border transition
-                ${showAsCorrect ? "bg-green-500 text-white border-green-500" :
-                  showAsWrong ? "bg-red-500 text-white border-red-500" :
-                  isPicked ? "bg-brand-700 text-white border-brand-700" :
-                  "bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border-stone-300 dark:border-stone-700 active:scale-95"}
-                disabled:opacity-100`}
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
+      {/* TOP slot */}
+      <SlotPanel
+        slotName="top"
+        title={showBottom ? "위 문제" : "정답 선택"}
+        choices={CHOICES}
+        registered={slotData.top?.answer}
+        attempt={slotData.top}
+        state={topState}
+        disabled={false}
+        onPick={(label) => onPick("top", label)}
+        onRegister={(label) => onRegister("top", label)}
+      />
 
-      {/* Feedback panel */}
-      {feedback === "register" && (
-        <div className="rounded-lg border-2 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/40 p-3 space-y-2">
-          <div className="text-sm font-medium text-yellow-900 dark:text-yellow-100">
-            이 카드의 정답을 처음 만났어요. 위 해설에 적힌 정답을 한 번만 등록해 주세요 (다음부터 자동 채점).
-          </div>
-          <div className="grid grid-cols-4 gap-2">
-            {CHOICES.map((label) => (
-              <button
-                key={label}
-                onClick={() => onRegister(label)}
-                className="h-10 rounded bg-yellow-500 text-white text-lg font-bold"
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
+      {/* Toggle bottom slot */}
+      {!showBottom && (
+        <button
+          onClick={() => setShowBottom(true)}
+          className="w-full text-xs py-2 rounded bg-stone-100 dark:bg-stone-900 text-stone-600 dark:text-stone-400 border border-dashed border-stone-300 dark:border-stone-700"
+        >
+          ▼ 이 카드에 두 번째 문제도 있어요 (A)
+        </button>
       )}
-      {feedback === "correct" && (
-        <div className="rounded-lg bg-green-500/15 border border-green-500 p-3 text-sm">
-          ✅ 정답입니다.
-          {attempt && <span className="text-stone-500"> (누적 {attempt.correct}/{attempt.correct + attempt.wrong})</span>}
-        </div>
-      )}
-      {feedback === "wrong" && (
-        <div className="rounded-lg bg-red-500/15 border border-red-500 p-3 text-sm">
-          ❌ 정답은 <span className="font-bold">{registeredAnswer}</span> · 자동으로 「다시 볼 것」에 추가됨
-          {attempt && <span className="text-stone-500"> (누적 {attempt.correct}/{attempt.correct + attempt.wrong})</span>}
-        </div>
+
+      {/* BOTTOM slot */}
+      {showBottom && (
+        <SlotPanel
+          slotName="bottom"
+          title="아래 문제"
+          choices={CHOICES}
+          registered={slotData.bottom?.answer}
+          attempt={slotData.bottom}
+          state={bottomState}
+          disabled={false}
+          onPick={(label) => onPick("bottom", label)}
+          onRegister={(label) => onRegister("bottom", label)}
+          onHide={() => setShowBottom(false)}
+        />
       )}
 
       {/* Bottom controls */}
@@ -330,24 +318,106 @@ function StudyInner() {
       </div>
 
       <div className="text-xs text-stone-500 text-center">
-        키보드: 1·2·3·4=답 선택 · ←→=이동 · K=익힘 · R=다시 · B=북마크
+        키보드: 1·2·3·4=답 (Shift+숫자=아래 문제) · A=두 번째 문제 표시 · ←→=이동 · K=익힘 · R=다시 · B=북마크
       </div>
 
       {/* Note */}
       <details className="text-sm">
         <summary className="cursor-pointer text-stone-600 dark:text-stone-400">
           메모
-          {registeredAnswer && <span className="text-stone-400"> · 정답 등록됨: {registeredAnswer}</span>}
         </summary>
         <textarea
           value={noteText}
           onChange={(e) => setNoteText(e.target.value)}
           onBlur={async () => setProgress(await setNote(current.id, noteText))}
           rows={3}
-          placeholder="이 문제에 대한 본인 정리"
+          placeholder="이 카드에 대한 본인 정리"
           className="mt-2 w-full rounded border border-stone-300 dark:border-stone-700 bg-transparent px-3 py-2 text-sm"
         />
       </details>
+    </div>
+  );
+}
+
+function SlotPanel({
+  slotName, title, choices, registered, attempt, state, onPick, onRegister, onHide,
+}: {
+  slotName: Slot;
+  title: string;
+  choices: ChoiceLabel[];
+  registered?: ChoiceLabel;
+  attempt?: { correct: number; wrong: number };
+  state: SlotInteraction;
+  disabled: boolean;
+  onPick: (label: ChoiceLabel) => void;
+  onRegister: (label: ChoiceLabel) => void;
+  onHide?: () => void;
+}) {
+  void slotName;
+  const { picked, feedback } = state;
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center text-xs text-stone-500">
+        <span>{title}</span>
+        {registered && <span className="ml-2 text-stone-400">정답 등록: {registered}</span>}
+        {attempt && (attempt.correct + attempt.wrong > 0) && (
+          <span className="ml-2 text-stone-400">{attempt.correct}/{attempt.correct + attempt.wrong}</span>
+        )}
+        {onHide && (
+          <button onClick={onHide} className="ml-auto text-stone-400 hover:text-stone-600">
+            ✕ 숨김
+          </button>
+        )}
+      </div>
+      <div className="grid grid-cols-4 gap-2">
+        {choices.map((label) => {
+          const isPicked = picked === label;
+          const isRegistered = registered === label && feedback !== null;
+          const showAsCorrect = (feedback === "correct" && isPicked) || (feedback === "wrong" && isRegistered);
+          const showAsWrong = feedback === "wrong" && isPicked;
+          return (
+            <button
+              key={label}
+              onClick={() => !picked && onPick(label)}
+              disabled={picked !== null}
+              className={`h-12 rounded-lg text-xl font-bold border transition
+                ${showAsCorrect ? "bg-green-500 text-white border-green-500" :
+                  showAsWrong ? "bg-red-500 text-white border-red-500" :
+                  isPicked ? "bg-brand-700 text-white border-brand-700" :
+                  "bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border-stone-300 dark:border-stone-700 active:scale-95"}
+                disabled:opacity-100`}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+      {feedback === "register" && (
+        <div className="rounded-lg border-2 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/40 p-2 space-y-1">
+          <div className="text-xs text-yellow-900 dark:text-yellow-100">
+            정답을 한 번만 등록 (해설에 적힌 답을 선택)
+          </div>
+          <div className="grid grid-cols-4 gap-1">
+            {choices.map((label) => (
+              <button
+                key={label}
+                onClick={() => onRegister(label)}
+                className="h-9 rounded bg-yellow-500 text-white text-base font-bold"
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {feedback === "correct" && (
+        <div className="text-xs rounded bg-green-500/15 border border-green-500 p-2">✅ 정답</div>
+      )}
+      {feedback === "wrong" && (
+        <div className="text-xs rounded bg-red-500/15 border border-red-500 p-2">
+          ❌ 정답: <span className="font-bold">{registered}</span> · 🔁 다시 볼 것 자동 표시
+        </div>
+      )}
     </div>
   );
 }
