@@ -7,14 +7,6 @@
     .\scripts\run_pipeline.ps1 -PdfPath "..." -Split
     .\scripts\run_pipeline.ps1 -SkipRender   # if PNGs already exist
     .\scripts\run_pipeline.ps1 -SkipVision   # build dataset from existing cache
-
-  Steps:
-    1) Create/activate venv and install requirements
-    2) Verify ANTHROPIC_API_KEY (prompts if missing)
-    3) Extract OCR hints
-    4) Render PDF pages to PNG
-    5) Call Claude Vision per page
-    6) Build normalized dataset
 #>
 
 param(
@@ -43,17 +35,6 @@ Write-Host "[1/6] Installing requirements..." -ForegroundColor Yellow
 python -m pip install --quiet --upgrade pip
 python -m pip install --quiet -r scripts\requirements.txt
 
-# 2) API key (needed for Vision step)
-if (-not $SkipVision) {
-  if (-not $env:ANTHROPIC_API_KEY) {
-    Write-Host "ANTHROPIC_API_KEY is not set." -ForegroundColor Red
-    $secure = Read-Host -AsSecureString "Enter your Anthropic API key (sk-ant-...)"
-    $bstr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
-    $env:ANTHROPIC_API_KEY = [Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
-    [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
-  }
-}
-
 # PDF path
 if (-not $PdfPath) {
   $PdfPath = Read-Host "Enter full path to source PDF"
@@ -63,12 +44,23 @@ if (-not (Test-Path $PdfPath)) {
   exit 1
 }
 
-# Split-only mode
+# Split-only mode (no API key needed)
 if ($Split) {
   Write-Host "[Split] $PdfPath -> chunks under $MaxMb MB" -ForegroundColor Yellow
   python scripts\split_pdf.py "$PdfPath" --max-mb $MaxMb
   Write-Host "Split done." -ForegroundColor Green
   exit 0
+}
+
+# 2) API key (needed only for Vision step)
+if (-not $SkipVision) {
+  if (-not $env:ANTHROPIC_API_KEY) {
+    Write-Host "ANTHROPIC_API_KEY is not set." -ForegroundColor Red
+    $secure = Read-Host -AsSecureString "Enter your Anthropic API key (sk-ant-...)"
+    $bstr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
+    $env:ANTHROPIC_API_KEY = [Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
+    [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
+  }
 }
 
 # 3) OCR hints
@@ -105,4 +97,3 @@ Write-Host "                     git commit -m 'Add 2025 dataset'"
 Write-Host "                     git push"
 Write-Host "  - Run UI:          npm install   (first time)"
 Write-Host "                     npm run dev"
-Write-Host "  - Partial Vision:  .\scripts\run_pipeline.ps1 -Limit 5 -PdfPath '$PdfPath'"
