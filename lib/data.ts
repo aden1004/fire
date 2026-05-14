@@ -1,54 +1,36 @@
-import type { Dataset, Question, MnemonicEntry, SubjectId } from "./types";
+import type { PagesDataset, PageEntry, SubjectId } from "./types";
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const dataset = require("@/data/normalized/2025_pages.json") as PagesDataset;
 
-// Try real dataset first; fall back to sample so the UI works before pipeline runs.
-let dataset: Dataset;
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  dataset = require("@/data/normalized/2025.json") as Dataset;
-} catch {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  dataset = require("@/data/normalized/2025.sample.json") as Dataset;
-}
-
-export function getDataset(): Dataset {
+export function getDataset(): PagesDataset {
   return dataset;
 }
 
-export function getAllQuestions(): Question[] {
-  return dataset.questions;
+export function getAllPages(): PageEntry[] {
+  return dataset.pages;
 }
 
-export function getQuestionById(id: string): Question | undefined {
-  return dataset.questions.find((q) => q.id === id);
+export function getPageByFile(file: string): PageEntry | undefined {
+  return dataset.pages.find((p) => p.file === file);
 }
 
-export function getAllMnemonics(): MnemonicEntry[] {
-  return dataset.mnemonics;
-}
-
-export interface QuestionFilters {
+export interface PageFilters {
   round?: number;
   subject?: SubjectId;
-  importance?: number;
-  search?: string;
+  includeCover?: boolean;
 }
 
-export function filterQuestions(qs: Question[], f: QuestionFilters): Question[] {
-  return qs.filter((q) => {
-    if (f.round && q.round !== f.round) return false;
-    if (f.subject && q.subject !== f.subject) return false;
-    if (f.importance && q.importance < f.importance) return false;
-    if (f.search) {
-      const s = f.search.toLowerCase();
-      const hay = (q.stem + q.choices.map((c) => c.text).join(" ") + q.explanation).toLowerCase();
-      if (!hay.includes(s)) return false;
-    }
+export function filterPages(pages: PageEntry[], f: PageFilters): PageEntry[] {
+  return pages.filter((p) => {
+    if (!f.includeCover && p.is_cover) return false;
+    if (f.round && p.round !== f.round) return false;
+    if (f.subject && !p.subjects.includes(f.subject)) return false;
     return true;
   });
 }
 
 export function listRounds(): number[] {
-  return [...new Set(dataset.questions.map((q) => q.round))].sort();
+  return [...new Set(dataset.pages.map((p) => p.round).filter((r): r is number => r !== null))].sort();
 }
 
 export const SUBJECTS: { id: SubjectId; name: string }[] = [
@@ -57,3 +39,7 @@ export const SUBJECTS: { id: SubjectId; name: string }[] = [
   { id: 3, name: "소방관계법규" },
   { id: 4, name: "소방전기시설의 구조 및 원리" },
 ];
+
+export function imageUrl(file: string): string {
+  return `/pages/2025/${file}`;
+}

@@ -36,12 +36,12 @@ async function put(key: string, value: unknown): Promise<void> {
 }
 
 export interface Progress {
-  bookmarks: string[];
-  wrong: string[];
-  answered: Record<string, { picked: string; correct: boolean; at: number }>;
+  bookmarks: string[];      // page file names
+  notes: Record<string, string>;  // page file -> free-form note
+  lastViewed?: string;
 }
 
-const EMPTY: Progress = { bookmarks: [], wrong: [], answered: {} };
+const EMPTY: Progress = { bookmarks: [], notes: {} };
 
 export async function loadProgress(): Promise<Progress> {
   return (await get<Progress>("progress")) ?? EMPTY;
@@ -51,30 +51,25 @@ export async function saveProgress(p: Progress): Promise<void> {
   await put("progress", p);
 }
 
-export async function toggleBookmark(id: string): Promise<Progress> {
+export async function toggleBookmark(file: string): Promise<Progress> {
   const p = await loadProgress();
-  const i = p.bookmarks.indexOf(id);
+  const i = p.bookmarks.indexOf(file);
   if (i >= 0) p.bookmarks.splice(i, 1);
-  else p.bookmarks.push(id);
+  else p.bookmarks.push(file);
   await saveProgress(p);
   return p;
 }
 
-export async function recordAnswer(id: string, picked: string, correct: boolean): Promise<Progress> {
+export async function setNote(file: string, text: string): Promise<Progress> {
   const p = await loadProgress();
-  p.answered[id] = { picked, correct, at: Date.now() };
-  const i = p.wrong.indexOf(id);
-  if (!correct && i < 0) p.wrong.push(id);
-  if (correct && i >= 0) p.wrong.splice(i, 1);
+  if (text.trim()) p.notes[file] = text;
+  else delete p.notes[file];
   await saveProgress(p);
   return p;
 }
 
-export async function clearAnswer(id: string): Promise<Progress> {
+export async function setLastViewed(file: string): Promise<void> {
   const p = await loadProgress();
-  delete p.answered[id];
-  const i = p.wrong.indexOf(id);
-  if (i >= 0) p.wrong.splice(i, 1);
+  p.lastViewed = file;
   await saveProgress(p);
-  return p;
 }

@@ -2,15 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getQuestionById } from "@/lib/data";
+import { getPageByFile, imageUrl } from "@/lib/data";
 import { loadProgress, type Progress } from "@/lib/storage";
-import type { Question } from "@/lib/types";
 
-type Tab = "wrong" | "bookmarks";
+type Tab = "bookmarks" | "notes";
 
 export default function NotesPage() {
   const [progress, setProgress] = useState<Progress | null>(null);
-  const [tab, setTab] = useState<Tab>("wrong");
+  const [tab, setTab] = useState<Tab>("bookmarks");
 
   useEffect(() => {
     loadProgress().then(setProgress);
@@ -18,53 +17,56 @@ export default function NotesPage() {
 
   if (!progress) return <div>로딩 중…</div>;
 
-  const ids = tab === "wrong" ? progress.wrong : progress.bookmarks;
-  const items = ids
-    .map((id) => getQuestionById(id))
-    .filter((q): q is Question => !!q);
+  const items =
+    tab === "bookmarks"
+      ? progress.bookmarks.map((f) => ({ file: f, note: progress.notes[f] ?? "" }))
+      : Object.entries(progress.notes).map(([f, n]) => ({ file: f, note: n }));
 
   return (
     <div className="space-y-4">
-      <h1 className="text-xl font-bold">오답노트·북마크</h1>
+      <h1 className="text-xl font-bold">북마크 · 메모</h1>
       <div className="flex gap-2 text-sm">
-        <button
-          onClick={() => setTab("wrong")}
-          className={`px-3 py-1.5 rounded ${tab === "wrong" ? "bg-brand-700 text-white" : "bg-stone-200 dark:bg-stone-800"}`}
-        >
-          오답 ({progress.wrong.length})
-        </button>
         <button
           onClick={() => setTab("bookmarks")}
           className={`px-3 py-1.5 rounded ${tab === "bookmarks" ? "bg-brand-700 text-white" : "bg-stone-200 dark:bg-stone-800"}`}
         >
           북마크 ({progress.bookmarks.length})
         </button>
+        <button
+          onClick={() => setTab("notes")}
+          className={`px-3 py-1.5 rounded ${tab === "notes" ? "bg-brand-700 text-white" : "bg-stone-200 dark:bg-stone-800"}`}
+        >
+          메모 ({Object.keys(progress.notes).length})
+        </button>
       </div>
 
       {items.length === 0 ? (
         <p className="text-sm text-stone-500 py-6 text-center">
-          {tab === "wrong" ? "아직 오답이 없습니다." : "북마크한 문제가 없습니다."}
+          {tab === "bookmarks" ? "북마크한 페이지가 없습니다." : "메모가 없습니다."}
         </p>
       ) : (
-        <ul className="divide-y divide-stone-200 dark:divide-stone-800">
-          {items.map((q) => (
-            <li key={q.id}>
-              <Link
-                href={`/questions/${q.id}`}
-                className="block py-3 hover:bg-stone-100 dark:hover:bg-stone-900 -mx-2 px-2 rounded"
-              >
-                <div className="flex items-start gap-2 text-xs">
-                  <span className="px-1.5 py-0.5 rounded bg-stone-200 dark:bg-stone-800">
-                    제{q.round}회 · {q.number}
-                  </span>
-                  <span className="px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-700/30 text-brand-700 dark:text-brand-50">
-                    {q.subject_name}
-                  </span>
-                </div>
-                <div className="text-sm mt-1 line-clamp-2">{q.stem}</div>
-              </Link>
-            </li>
-          ))}
+        <ul className="space-y-3">
+          {items.map((it) => {
+            const page = getPageByFile(it.file);
+            return (
+              <li key={it.file} className="rounded-lg border border-stone-300 dark:border-stone-700 p-3">
+                <Link href={`/pages/${encodeURIComponent(it.file)}`} className="flex gap-3 hover:opacity-90">
+                  <div className="w-20 h-28 shrink-0 overflow-hidden rounded bg-stone-100 dark:bg-stone-800">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={imageUrl(it.file)} alt={it.file} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs text-stone-500">
+                      {page?.page_marker ?? it.file} · 제{page?.round ?? "?"}회
+                    </div>
+                    {it.note && (
+                      <div className="text-sm mt-1 line-clamp-3 whitespace-pre-wrap">{it.note}</div>
+                    )}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

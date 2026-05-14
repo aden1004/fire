@@ -1,45 +1,35 @@
 export type SubjectId = 1 | 2 | 3 | 4;
-export type Importance = 1 | 2 | 3;
-export type ChoiceLabel = "①" | "②" | "③" | "④";
 
-export interface Choice {
-  label: ChoiceLabel;
-  text: string;
+export interface PageEntry {
+  file: string;
+  chunk: number;
+  in_chunk: number;
+  is_cover: boolean;
+  round: number | null;
+  book_page: number | null;
+  page_marker: string | null;
+  primary_subject: SubjectId | null;
+  subjects: SubjectId[];
 }
 
-export interface Mnemonic {
+export interface RoundInfo {
+  date: string;
+  footer_code: string;
+  first_page: number;
+  last_page: number;
+}
+
+export interface MnemonicKeyword {
+  round: number;
   keyword: string;
-  tip: string;
+  ocr_line: number;
 }
 
-export interface Question {
-  id: string;
-  round: number;
-  number: number;
-  subject: SubjectId;
-  subject_name: string;
-  importance: Importance;
-  stem: string;
-  choices: Choice[];
-  answer: ChoiceLabel | "";
-  explanation: string;
-  mnemonics: Mnemonic[];
-  pages: number[];
-  complete: boolean;
-}
-
-export interface MnemonicEntry extends Mnemonic {
-  round: number;
-  subject: SubjectId;
-  subject_name: string;
-  question_id: string;
-  question_number: number;
-}
-
-export interface Dataset {
+export interface PagesDataset {
   year: number;
+  rounds: Record<string, RoundInfo>;
   subjects: Record<string, string>;
-  questions: Question[];
-  mnemonics: MnemonicEntry[];
-  report?: unknown;
+  pages: PageEntry[];
+  mnemonic_keywords: MnemonicKeyword[];
+  notes: string;
 }

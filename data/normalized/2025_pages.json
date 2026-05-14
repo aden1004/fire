@@ -1,0 +1,1261 @@
+{
+  "year": 2025,
+  "rounds": {
+    "1": {
+      "date": "2025.2.7",
+      "footer_code": "02",
+      "first_page": 2,
+      "last_page": 27,
+      "subject_starts": {}
+    },
+    "2": {
+      "date": "2025.5.21",
+      "footer_code": "05",
+      "first_page": 28,
+      "last_page": 55,
+      "subject_starts": {}
+    },
+    "3": {
+      "date": "2025.9.1",
+      "footer_code": "09",
+      "first_page": 56,
+      "last_page": 84,
+      "subject_starts": {}
+    }
+  },
+  "subjects": {
+    "1": "소방원론",
+    "2": "소방전기일반",
+    "3": "소방관계법규",
+    "4": "소방전기시설의 구조 및 원리"
+  },
+  "pages": [
+    {
+      "file": "p01_01.jpg",
+      "chunk": 1,
+      "in_chunk": 1,
+      "is_cover": true,
+      "round": null,
+      "book_page": null,
+      "page_marker": null,
+      "primary_subject": null,
+      "subjects": []
+    },
+    {
+      "file": "p01_02.jpg",
+      "chunk": 1,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 2,
+      "page_marker": "25-2",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_03.jpg",
+      "chunk": 1,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 3,
+      "page_marker": "25-3",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_04.jpg",
+      "chunk": 1,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 4,
+      "page_marker": "25-4",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_05.jpg",
+      "chunk": 1,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 5,
+      "page_marker": "25-5",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_06.jpg",
+      "chunk": 1,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 6,
+      "page_marker": "25-6",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_07.jpg",
+      "chunk": 1,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 7,
+      "page_marker": "25-7",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p01_08.jpg",
+      "chunk": 1,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 8,
+      "page_marker": "25-8",
+      "primary_subject": 1,
+      "subjects": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "p01_09.jpg",
+      "chunk": 1,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 9,
+      "page_marker": "25-9",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p01_10.jpg",
+      "chunk": 1,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 10,
+      "page_marker": "25-10",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p01_11.jpg",
+      "chunk": 1,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 11,
+      "page_marker": "25-11",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p01_12.jpg",
+      "chunk": 1,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 12,
+      "page_marker": "25-12",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p01_13.jpg",
+      "chunk": 1,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 13,
+      "page_marker": "25-13",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p01_14.jpg",
+      "chunk": 1,
+      "in_chunk": 14,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 14,
+      "page_marker": "25-14",
+      "primary_subject": 2,
+      "subjects": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "p02_01.jpg",
+      "chunk": 2,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 15,
+      "page_marker": "25-15",
+      "primary_subject": 2,
+      "subjects": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "p02_02.jpg",
+      "chunk": 2,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 16,
+      "page_marker": "25-16",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p02_03.jpg",
+      "chunk": 2,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 17,
+      "page_marker": "25-17",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p02_04.jpg",
+      "chunk": 2,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 18,
+      "page_marker": "25-18",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p02_05.jpg",
+      "chunk": 2,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 19,
+      "page_marker": "25-19",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p02_06.jpg",
+      "chunk": 2,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 20,
+      "page_marker": "25-20",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p02_07.jpg",
+      "chunk": 2,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 21,
+      "page_marker": "25-21",
+      "primary_subject": 3,
+      "subjects": [
+        3,
+        4
+      ]
+    },
+    {
+      "file": "p02_08.jpg",
+      "chunk": 2,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 22,
+      "page_marker": "25-22",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p02_09.jpg",
+      "chunk": 2,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 23,
+      "page_marker": "25-23",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p02_10.jpg",
+      "chunk": 2,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 24,
+      "page_marker": "25-24",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p02_11.jpg",
+      "chunk": 2,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 25,
+      "page_marker": "25-25",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p02_12.jpg",
+      "chunk": 2,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 26,
+      "page_marker": "25-26",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p02_13.jpg",
+      "chunk": 2,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 1,
+      "book_page": 27,
+      "page_marker": "25-27",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p03_01.jpg",
+      "chunk": 3,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 28,
+      "page_marker": "25-28",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_02.jpg",
+      "chunk": 3,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 29,
+      "page_marker": "25-29",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_03.jpg",
+      "chunk": 3,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 30,
+      "page_marker": "25-30",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_04.jpg",
+      "chunk": 3,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 31,
+      "page_marker": "25-31",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_05.jpg",
+      "chunk": 3,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 32,
+      "page_marker": "25-32",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_06.jpg",
+      "chunk": 3,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 33,
+      "page_marker": "25-33",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p03_07.jpg",
+      "chunk": 3,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 34,
+      "page_marker": "25-34",
+      "primary_subject": 1,
+      "subjects": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "p03_08.jpg",
+      "chunk": 3,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 35,
+      "page_marker": "25-35",
+      "primary_subject": 1,
+      "subjects": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "p03_09.jpg",
+      "chunk": 3,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 36,
+      "page_marker": "25-36",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p03_10.jpg",
+      "chunk": 3,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 37,
+      "page_marker": "25-37",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p03_11.jpg",
+      "chunk": 3,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 38,
+      "page_marker": "25-38",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p03_12.jpg",
+      "chunk": 3,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 39,
+      "page_marker": "25-39",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p03_13.jpg",
+      "chunk": 3,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 40,
+      "page_marker": "25-40",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p03_14.jpg",
+      "chunk": 3,
+      "in_chunk": 14,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 41,
+      "page_marker": "25-41",
+      "primary_subject": 2,
+      "subjects": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "p04_01.jpg",
+      "chunk": 4,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 42,
+      "page_marker": "25-42",
+      "primary_subject": 2,
+      "subjects": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "p04_02.jpg",
+      "chunk": 4,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 43,
+      "page_marker": "25-43",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p04_03.jpg",
+      "chunk": 4,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 44,
+      "page_marker": "25-44",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p04_04.jpg",
+      "chunk": 4,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 45,
+      "page_marker": "25-45",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p04_05.jpg",
+      "chunk": 4,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 46,
+      "page_marker": "25-46",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p04_06.jpg",
+      "chunk": 4,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 47,
+      "page_marker": "25-47",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p04_07.jpg",
+      "chunk": 4,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 48,
+      "page_marker": "25-48",
+      "primary_subject": 3,
+      "subjects": [
+        3,
+        4
+      ]
+    },
+    {
+      "file": "p04_08.jpg",
+      "chunk": 4,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 49,
+      "page_marker": "25-49",
+      "primary_subject": 3,
+      "subjects": [
+        3,
+        4
+      ]
+    },
+    {
+      "file": "p04_09.jpg",
+      "chunk": 4,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 50,
+      "page_marker": "25-50",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p04_10.jpg",
+      "chunk": 4,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 51,
+      "page_marker": "25-51",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p04_11.jpg",
+      "chunk": 4,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 52,
+      "page_marker": "25-52",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p04_12.jpg",
+      "chunk": 4,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 53,
+      "page_marker": "25-53",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p04_13.jpg",
+      "chunk": 4,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 54,
+      "page_marker": "25-54",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p04_14.jpg",
+      "chunk": 4,
+      "in_chunk": 14,
+      "is_cover": false,
+      "round": 2,
+      "book_page": 55,
+      "page_marker": "25-55",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p05_01.jpg",
+      "chunk": 5,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 56,
+      "page_marker": "25-56",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_02.jpg",
+      "chunk": 5,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 57,
+      "page_marker": "25-57",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_03.jpg",
+      "chunk": 5,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 58,
+      "page_marker": "25-58",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_04.jpg",
+      "chunk": 5,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 59,
+      "page_marker": "25-59",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_05.jpg",
+      "chunk": 5,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 60,
+      "page_marker": "25-60",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_06.jpg",
+      "chunk": 5,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 61,
+      "page_marker": "25-61",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_07.jpg",
+      "chunk": 5,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 62,
+      "page_marker": "25-62",
+      "primary_subject": 1,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "file": "p05_08.jpg",
+      "chunk": 5,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 63,
+      "page_marker": "25-63",
+      "primary_subject": 1,
+      "subjects": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "p05_09.jpg",
+      "chunk": 5,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 64,
+      "page_marker": "25-64",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p05_10.jpg",
+      "chunk": 5,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 65,
+      "page_marker": "25-65",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p05_11.jpg",
+      "chunk": 5,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 66,
+      "page_marker": "25-66",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p05_12.jpg",
+      "chunk": 5,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 67,
+      "page_marker": "25-67",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p05_13.jpg",
+      "chunk": 5,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 68,
+      "page_marker": "25-68",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p05_14.jpg",
+      "chunk": 5,
+      "in_chunk": 14,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 69,
+      "page_marker": "25-69",
+      "primary_subject": 2,
+      "subjects": [
+        2
+      ]
+    },
+    {
+      "file": "p06_01.jpg",
+      "chunk": 6,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 70,
+      "page_marker": "25-70",
+      "primary_subject": 2,
+      "subjects": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "p06_02.jpg",
+      "chunk": 6,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 71,
+      "page_marker": "25-71",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_03.jpg",
+      "chunk": 6,
+      "in_chunk": 3,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 72,
+      "page_marker": "25-72",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_04.jpg",
+      "chunk": 6,
+      "in_chunk": 4,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 73,
+      "page_marker": "25-73",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_05.jpg",
+      "chunk": 6,
+      "in_chunk": 5,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 74,
+      "page_marker": "25-74",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_06.jpg",
+      "chunk": 6,
+      "in_chunk": 6,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 75,
+      "page_marker": "25-75",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_07.jpg",
+      "chunk": 6,
+      "in_chunk": 7,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 76,
+      "page_marker": "25-76",
+      "primary_subject": 3,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "file": "p06_08.jpg",
+      "chunk": 6,
+      "in_chunk": 8,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 77,
+      "page_marker": "25-77",
+      "primary_subject": 3,
+      "subjects": [
+        3,
+        4
+      ]
+    },
+    {
+      "file": "p06_09.jpg",
+      "chunk": 6,
+      "in_chunk": 9,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 78,
+      "page_marker": "25-78",
+      "primary_subject": 3,
+      "subjects": [
+        3,
+        4
+      ]
+    },
+    {
+      "file": "p06_10.jpg",
+      "chunk": 6,
+      "in_chunk": 10,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 79,
+      "page_marker": "25-79",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p06_11.jpg",
+      "chunk": 6,
+      "in_chunk": 11,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 80,
+      "page_marker": "25-80",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p06_12.jpg",
+      "chunk": 6,
+      "in_chunk": 12,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 81,
+      "page_marker": "25-81",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p06_13.jpg",
+      "chunk": 6,
+      "in_chunk": 13,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 82,
+      "page_marker": "25-82",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p07_01.jpg",
+      "chunk": 7,
+      "in_chunk": 1,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 83,
+      "page_marker": "25-83",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "file": "p07_02.jpg",
+      "chunk": 7,
+      "in_chunk": 2,
+      "is_cover": false,
+      "round": 3,
+      "book_page": 84,
+      "page_marker": "25-84",
+      "primary_subject": 4,
+      "subjects": [
+        4
+      ]
+    }
+  ],
+  "mnemonic_keywords": [
+    {
+      "round": 1,
+      "keyword": "FCIBrl",
+      "ocr_line": 199
+    },
+    {
+      "round": 1,
+      "keyword": "자습피",
+      "ocr_line": 344
+    },
+    {
+      "round": 1,
+      "keyword": "황물이",
+      "ocr_line": 345
+    },
+    {
+      "round": 1,
+      "keyword": "흡반철",
+      "ocr_line": 769
+    },
+    {
+      "round": 1,
+      "keyword": "농축수",
+      "ocr_line": 1332
+    },
+    {
+      "round": 1,
+      "keyword": "중계기",
+      "ocr_line": 1667
+    },
+    {
+      "round": 2,
+      "keyword": "강비경",
+      "ocr_line": 2829
+    },
+    {
+      "round": 2,
+      "keyword": "관리의",
+      "ocr_line": 2913
+    },
+    {
+      "round": 2,
+      "keyword": "다10",
+      "ocr_line": 3403
+    },
+    {
+      "round": 2,
+      "keyword": "휴피",
+      "ocr_line": 3474
+    },
+    {
+      "round": 2,
+      "keyword": "피옥직안출",
+      "ocr_line": 3515
+    },
+    {
+      "round": 2,
+      "keyword": "변수음차",
+      "ocr_line": 3651
+    },
+    {
+      "round": 2,
+      "keyword": "계2505",
+      "ocr_line": 3792
+    },
+    {
+      "round": 3,
+      "keyword": "벽보지",
+      "ocr_line": 3954
+    },
+    {
+      "round": 3,
+      "keyword": "과나불산",
+      "ocr_line": 4007
+    },
+    {
+      "round": 3,
+      "keyword": "자습피",
+      "ocr_line": 4114
+    },
+    {
+      "round": 3,
+      "keyword": "132",
+      "ocr_line": 4186
+    },
+    {
+      "round": 3,
+      "keyword": "권2",
+      "ocr_line": 4410
+    },
+    {
+      "round": 3,
+      "keyword": "유비",
+      "ocr_line": 4928
+    },
+    {
+      "round": 3,
+      "keyword": "사증관손",
+      "ocr_line": 5017
+    },
+    {
+      "round": 3,
+      "keyword": "서본기안",
+      "ocr_line": 5321
+    },
+    {
+      "round": 3,
+      "keyword": "수5",
+      "ocr_line": 5436
+    },
+    {
+      "round": 3,
+      "keyword": "조공",
+      "ocr_line": 5743
+    },
+    {
+      "round": 3,
+      "keyword": "휴피",
+      "ocr_line": 5752
+    }
+  ],
+  "notes": "Subject ranges per page are approximated by question-number density. The page image itself is the source of truth for question/answer/explanation. Filter by round is exact; filter by subject is heuristic."
+}
