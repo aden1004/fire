@@ -35,41 +35,53 @@ async function put(key: string, value: unknown): Promise<void> {
   });
 }
 
+export type CardStatus = "unseen" | "known" | "review";
+
 export interface Progress {
-  bookmarks: string[];      // page file names
-  notes: Record<string, string>;  // page file -> free-form note
-  lastViewed?: string;
+  bookmarks: string[];                // card ids (or page files for back-compat)
+  cardStatus: Record<string, CardStatus>;
+  notes: Record<string, string>;
+  lastCardId?: string;
 }
 
-const EMPTY: Progress = { bookmarks: [], notes: {} };
+const EMPTY: Progress = { bookmarks: [], cardStatus: {}, notes: {} };
 
 export async function loadProgress(): Promise<Progress> {
-  return (await get<Progress>("progress")) ?? EMPTY;
+  const p = (await get<Partial<Progress>>("progress")) ?? {};
+  return { ...EMPTY, ...p, cardStatus: p.cardStatus ?? {}, notes: p.notes ?? {}, bookmarks: p.bookmarks ?? [] };
 }
 
 export async function saveProgress(p: Progress): Promise<void> {
   await put("progress", p);
 }
 
-export async function toggleBookmark(file: string): Promise<Progress> {
+export async function toggleBookmark(id: string): Promise<Progress> {
   const p = await loadProgress();
-  const i = p.bookmarks.indexOf(file);
+  const i = p.bookmarks.indexOf(id);
   if (i >= 0) p.bookmarks.splice(i, 1);
-  else p.bookmarks.push(file);
+  else p.bookmarks.push(id);
   await saveProgress(p);
   return p;
 }
 
-export async function setNote(file: string, text: string): Promise<Progress> {
+export async function setCardStatus(id: string, status: CardStatus): Promise<Progress> {
   const p = await loadProgress();
-  if (text.trim()) p.notes[file] = text;
-  else delete p.notes[file];
+  if (status === "unseen") delete p.cardStatus[id];
+  else p.cardStatus[id] = status;
   await saveProgress(p);
   return p;
 }
 
-export async function setLastViewed(file: string): Promise<void> {
+export async function setLastCard(id: string): Promise<void> {
   const p = await loadProgress();
-  p.lastViewed = file;
+  p.lastCardId = id;
   await saveProgress(p);
+}
+
+export async function setNote(id: string, text: string): Promise<Progress> {
+  const p = await loadProgress();
+  if (text.trim()) p.notes[id] = text;
+  else delete p.notes[id];
+  await saveProgress(p);
+  return p;
 }

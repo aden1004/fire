@@ -1,17 +1,47 @@
-import type { PagesDataset, PageEntry, SubjectId } from "./types";
+import type {
+  Card,
+  CardsDataset,
+  PageEntry,
+  PagesDataset,
+  SubjectId,
+} from "./types";
+
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const dataset = require("@/data/normalized/2025_pages.json") as PagesDataset;
+const pagesData = require("@/data/normalized/2025_pages.json") as PagesDataset;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const cardsData = require("@/data/normalized/2025_cards.json") as CardsDataset;
 
 export function getDataset(): PagesDataset {
-  return dataset;
+  return pagesData;
 }
 
 export function getAllPages(): PageEntry[] {
-  return dataset.pages;
+  return pagesData.pages;
 }
 
 export function getPageByFile(file: string): PageEntry | undefined {
-  return dataset.pages.find((p) => p.file === file);
+  return pagesData.pages.find((p) => p.file === file);
+}
+
+export function getAllCards(): Card[] {
+  return cardsData.cards;
+}
+
+export function getCardById(id: string): Card | undefined {
+  return cardsData.cards.find((c) => c.id === id);
+}
+
+export interface CardFilters {
+  round?: number;
+  subject?: SubjectId;
+}
+
+export function filterCards(cards: Card[], f: CardFilters): Card[] {
+  return cards.filter((c) => {
+    if (f.round && c.round !== f.round) return false;
+    if (f.subject && !c.subjects.includes(f.subject)) return false;
+    return true;
+  });
 }
 
 export interface PageFilters {
@@ -30,7 +60,7 @@ export function filterPages(pages: PageEntry[], f: PageFilters): PageEntry[] {
 }
 
 export function listRounds(): number[] {
-  return [...new Set(dataset.pages.map((p) => p.round).filter((r): r is number => r !== null))].sort();
+  return [...new Set(cardsData.cards.map((c) => c.round).filter((r): r is number => r !== null))].sort();
 }
 
 export const SUBJECTS: { id: SubjectId; name: string }[] = [
@@ -40,6 +70,10 @@ export const SUBJECTS: { id: SubjectId; name: string }[] = [
   { id: 4, name: "소방전기시설의 구조 및 원리" },
 ];
 
-export function imageUrl(file: string): string {
+export function cardImageUrl(file: string): string {
+  return `/cards/2025/${file}`;
+}
+
+export function pageImageUrl(file: string): string {
   return `/pages/2025/${file}`;
 }

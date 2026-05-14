@@ -33,3 +33,21 @@ export interface PagesDataset {
   mnemonic_keywords: MnemonicKeyword[];
   notes: string;
 }
+
+export interface Card {
+  id: string;
+  file: string;             // card jpeg filename, e.g. "part01_p02_L.jpg"
+  side: "L" | "R";
+  source_page: string;      // original page jpeg filename
+  round: number | null;
+  book_page: number | null;
+  page_marker: string | null;
+  subjects: SubjectId[];
+  primary_subject: SubjectId | null;
+}
+
+export interface CardsDataset {
+  year: number;
+  card_count: number;
+  cards: Card[];
+}
