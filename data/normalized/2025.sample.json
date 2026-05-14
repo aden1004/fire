@@ -1,0 +1,84 @@
+{
+  "year": 2025,
+  "subjects": {
+    "1": "소방원론",
+    "2": "소방전기일반",
+    "3": "소방관계법규",
+    "4": "소방전기시설의 구조 및 원리"
+  },
+  "questions": [
+    {
+      "id": "sample-r1-s1-q01",
+      "round": 1,
+      "number": 1,
+      "subject": 1,
+      "subject_name": "소방원론",
+      "importance": 3,
+      "stem": "[샘플] 실제 데이터셋이 빌드되기 전까지 표시되는 예시 문제입니다. 스크립트를 실행해 data/normalized/2025.json을 생성하면 실제 기출문제로 대체됩니다.",
+      "choices": [
+        { "label": "①", "text": "샘플 보기 1" },
+        { "label": "②", "text": "샘플 보기 2" },
+        { "label": "③", "text": "샘플 보기 3" },
+        { "label": "④", "text": "샘플 보기 4" }
+      ],
+      "answer": "②",
+      "explanation": "[샘플 해설] 실제 데이터셋이 들어오면 책에 인쇄된 원본 해설이 그대로 표시됩니다.",
+      "mnemonics": [
+        { "keyword": "샘플 키워드", "tip": "예시 암기팁 — 실제 데이터에서는 책의 '기억법' 항목이 그대로 노출됩니다." }
+      ],
+      "pages": [1],
+      "complete": true
+    },
+    {
+      "id": "sample-r1-s2-q01",
+      "round": 1,
+      "number": 21,
+      "subject": 2,
+      "subject_name": "소방전기일반",
+      "importance": 2,
+      "stem": "[샘플] 두 번째 과목 예시 문항.",
+      "choices": [
+        { "label": "①", "text": "A" },
+        { "label": "②", "text": "B" },
+        { "label": "③", "text": "C" },
+        { "label": "④", "text": "D" }
+      ],
+      "answer": "③",
+      "explanation": "",
+      "mnemonics": [],
+      "pages": [10],
+      "complete": true
+    },
+    {
+      "id": "sample-r2-s3-q01",
+      "round": 2,
+      "number": 41,
+      "subject": 3,
+      "subject_name": "소방관계법규",
+      "importance": 1,
+      "stem": "[샘플] 2회차 법규 예시 문항.",
+      "choices": [
+        { "label": "①", "text": "1" },
+        { "label": "②", "text": "2" },
+        { "label": "③", "text": "3" },
+        { "label": "④", "text": "4" }
+      ],
+      "answer": "①",
+      "explanation": "",
+      "mnemonics": [],
+      "pages": [30],
+      "complete": true
+    }
+  ],
+  "mnemonics": [
+    {
+      "round": 1,
+      "subject": 1,
+      "subject_name": "소방원론",
+      "question_id": "sample-r1-s1-q01",
+      "question_number": 1,
+      "keyword": "샘플 키워드",
+      "tip": "예시 암기팁"
+    }
+  ]
+}

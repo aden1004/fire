@@ -1,0 +1,17 @@
+{
+  "name": "소방설비기사(전기) 기출",
+  "short_name": "소방기사",
+  "description": "2025년 기출문제 단기 회독용",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#c2410c",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
