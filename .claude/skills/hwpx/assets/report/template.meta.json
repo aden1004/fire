@@ -1,0 +1,160 @@
+{
+  "name": "내부 보고서",
+  "description": "기관 내부 보고용 양식. 표지(기관명·제목·작성일) + 목차(Ⅰ~Ⅴ) + 본문(결재란·섹션바·□○―※ 4단계 위계) 구조. 학교·공공기관 내부 보고서, 추진계획서, 결과보고서 등에 사용.",
+  "page_count": "3+ (표지 + 목차 + 본문 N쪽)",
+  "fields": [
+    {
+      "key": "기관명",
+      "placeholder": "브라더 공기관",
+      "type": "single",
+      "required": true,
+      "description": "표지 상단 기관명 (예: '경신고등학교', '○○교육청')",
+      "max_length": 30
+    },
+    {
+      "key": "기관명_로고",
+      "placeholder": "BinData/image1.png",
+      "type": "image_text",
+      "required": false,
+      "description": "표지·목차 페이지의 로고 영역에 표시될 기관명 텍스트. 양식의 두 위치(표지 상단, 목차 페이지 우측)에 동일하게 표시됨. 보통 '기관명' 필드와 같은 값을 사용. 한컴오피스에서 학교 로고 이미지로 직접 교체하고 싶다면 이 필드를 비워두고 양식을 한글에서 편집."
+    },
+    {
+      "key": "보고서_제목",
+      "placeholder": "기본 보고서 양식",
+      "type": "single",
+      "required": true,
+      "description": "보고서 제목. 표지와 본문 첫 페이지 모두에 반영됨."
+    },
+    {
+      "key": "작성일",
+      "placeholder": "2024. 5. 23.",
+      "type": "date",
+      "required": true,
+      "format": "YYYY. M. D.",
+      "default": "today",
+      "description": "표지의 작성일. 공문서 표준 형식(월·일 앞 0 없음)으로 자동 변환."
+    },
+    {
+      "key": "본문_페이지_제목",
+      "placeholder": "제 목",
+      "type": "single",
+      "required": false,
+      "description": "본문 페이지 상단의 제목. 보통 보고서_제목과 동일하게 설정."
+    },
+    {
+      "key": "목차_1",
+      "placeholder": ". 개요",
+      "type": "single",
+      "required": false,
+      "description": "목차 Ⅰ 항목 (예: '. 추진 배경'). 점(.) 뒤 공백 1칸 + 내용 형식 유지 권장."
+    },
+    {
+      "key": "목차_2",
+      "placeholder": ". 추진배경",
+      "type": "single",
+      "required": false,
+      "description": "목차 Ⅱ 항목"
+    },
+    {
+      "key": "목차_3",
+      "placeholder": ". 현황 및 문제점",
+      "type": "single",
+      "required": false,
+      "description": "목차 Ⅲ 항목"
+    },
+    {
+      "key": "목차_4",
+      "placeholder": ". 개선(해결)방안",
+      "type": "single",
+      "required": false,
+      "description": "목차 Ⅳ 항목"
+    },
+    {
+      "key": "목차_5",
+      "placeholder": ". 향후계획",
+      "type": "single",
+      "required": false,
+      "description": "목차 Ⅴ 항목"
+    },
+    {
+      "key": "섹션_1_제목",
+      "placeholder": " 추진 배경",
+      "type": "single",
+      "required": false,
+      "description": "본문 첫 번째 섹션 구분 바의 제목. 앞 공백 1칸 유지."
+    },
+    {
+      "key": "섹션_2_제목",
+      "placeholder": " 현황 및 문제점",
+      "type": "single",
+      "required": false,
+      "description": "본문 두 번째 섹션 구분 바의 제목"
+    },
+    {
+      "key": "섹션_3_제목",
+      "placeholder": " 개선 방안",
+      "type": "single",
+      "required": false,
+      "description": "본문 세 번째 섹션 구분 바의 제목"
+    },
+    {
+      "key": "섹션_4_제목",
+      "placeholder": " 추진 계획",
+      "type": "single",
+      "required": false,
+      "description": "본문 네 번째 섹션 구분 바의 제목"
+    },
+    {
+      "key": "본문_1단계",
+      "placeholder": "헤드라인M 폰트 16포인트(문단 위 15)",
+      "type": "sequential",
+      "max_count": 8,
+      "required": false,
+      "description": "□ 항목 (HY헤드라인M 16pt, 대분류). 양식 전반에 8개 자리."
+    },
+    {
+      "key": "본문_2단계",
+      "placeholder": "  ○ 휴면명조 15포인트(문단위 10)",
+      "type": "sequential",
+      "max_count": 8,
+      "required": false,
+      "description": "○ 항목 (휴먼명조 15pt, 중분류). 8개 자리. 앞에 공백 2칸이 있는 placeholder임."
+    },
+    {
+      "key": "본문_3단계",
+      "placeholder": "   ― 휴면명조 15포인트(문단 위 6)",
+      "type": "sequential",
+      "max_count": 8,
+      "required": false,
+      "description": "― 항목 (휴먼명조 15pt, 소분류). 8개 자리. 앞에 공백 3칸."
+    },
+    {
+      "key": "본문_4단계",
+      "placeholder": "     ※ 중고딕 13포인트(문단 위 3)",
+      "type": "sequential",
+      "max_count": 7,
+      "required": false,
+      "description": "※ 항목 (한양중고딕 13pt, 참고/주석). 7개 자리. 앞에 공백 5칸."
+    },
+    {
+      "key": "붙임_참고_1번항목",
+      "placeholder": "  1. 세부내용",
+      "type": "sequential",
+      "max_count": 2,
+      "required": false,
+      "description": "[붙임]과 [참고] 각각의 1번 항목. 양식에 2자리 있음. 리스트로 ['붙임 1번 내용', '참고 1번 내용'] 형태로 전달."
+    },
+    {
+      "key": "붙임_2번항목",
+      "placeholder": "  2. 세부내용",
+      "type": "single",
+      "required": false,
+      "description": "[붙임]의 2번 항목. 양식에 1자리만 있음."
+    }
+  ],
+  "notes": [
+    "본문의 □○―※ 4단계 위계는 보고서(내부 보고용) 표준 기호 체계. 공문서(기안문)의 '1. 가. 1) …' 체계와 다름.",
+    "본문_1~4단계는 sequential 타입으로, 양식에 미리 마련된 자리(슬롯) 개수까지만 채울 수 있음. 더 많은 항목이 필요하면 양식을 확장해야 함.",
+    "필요 없는 슬롯은 빈 문자열을 넣지 말고, 리스트에서 아예 생략하면 양식의 안내 텍스트가 그대로 남아 사용자가 한글에서 직접 수정 가능."
+  ]
+}

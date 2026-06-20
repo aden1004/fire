@@ -1,0 +1,97 @@
+{
+  "name": "운영 계획서",
+  "description": "학교·기관의 사업/프로그램 운영 계획서 양식. 표지(제목·기관·작성일) + Ⅰ.추진 배경 + Ⅱ.추진 목표 + Ⅲ.세부 추진 내용 + Ⅳ.추진 일정(표) + Ⅴ.소요 예산 + Ⅵ.기대 효과 구조. 학년도 운영 계획, 동아리 운영 계획, 사업 계획서 등에 사용. 보고서 양식보다 단순한 구조.",
+  "fields": [
+    {
+      "key": "계획서_제목",
+      "placeholder": "◆계획서 제목 (예: 2026학년도 AI 교육 운영 계획)◆",
+      "type": "single",
+      "required": true,
+      "description": "계획서 제목."
+    },
+    {
+      "key": "작성_기관",
+      "placeholder": "◆작성 기관 (예: ○○고등학교)◆",
+      "type": "single",
+      "required": true,
+      "description": "작성 기관/부서."
+    },
+    {
+      "key": "작성일",
+      "placeholder": "◆작성일 (예: 2026. 2. 13.)◆",
+      "type": "date",
+      "required": true,
+      "format": "YYYY. M. D.",
+      "default": "today",
+      "description": "작성일. 공문서 표준 형식(월·일 앞 0 없음)."
+    },
+    {
+      "key": "추진_배경",
+      "placeholder": "◆추진 배경 항목◆",
+      "type": "sequential",
+      "max_count": 3,
+      "required": true,
+      "description": "Ⅰ. 추진 배경 및 목적 항목 (1./2./3.). 양식에 3자리. 사업의 필요성, 정책적 근거 등을 작성."
+    },
+    {
+      "key": "추진_목표",
+      "placeholder": "◆추진 목표 항목◆",
+      "type": "sequential",
+      "max_count": 4,
+      "required": true,
+      "description": "Ⅱ. 추진 목표 항목 (1./2./3./4.). 양식에 4자리. 측정 가능한 목표로 작성 권장."
+    },
+    {
+      "key": "세부_추진_과제",
+      "placeholder": "◆세부 추진 과제 항목◆",
+      "type": "sequential",
+      "max_count": 6,
+      "required": true,
+      "description": "Ⅲ. 세부 추진 내용 항목 (1./2./3./4./5./6.). 양식에 6자리. 구체적인 실행 과제를 작성."
+    },
+    {
+      "key": "일정_시기",
+      "placeholder": "◆일정 시기◆",
+      "type": "sequential",
+      "max_count": 4,
+      "required": false,
+      "description": "Ⅳ. 추진 일정 표의 '시기' 열 (4행). 예: '2026. 3월', '4~5월', '하반기' 등."
+    },
+    {
+      "key": "일정_내용",
+      "placeholder": "◆일정 내용◆",
+      "type": "sequential",
+      "max_count": 4,
+      "required": false,
+      "description": "Ⅳ. 추진 일정 표의 '추진 내용' 열 (4행). 시기와 1:1 대응."
+    },
+    {
+      "key": "일정_담당",
+      "placeholder": "◆일정 담당◆",
+      "type": "sequential",
+      "max_count": 4,
+      "required": false,
+      "description": "Ⅳ. 추진 일정 표의 '담당' 열 (4행)."
+    },
+    {
+      "key": "예산",
+      "placeholder": "◆예산 총액 및 산출 내역 (예: 총 1,500,000원 / 강사료 800,000원, 자료 700,000원). 예산이 없으면 '해당 없음'.◆",
+      "type": "single",
+      "required": false,
+      "description": "Ⅴ. 소요 예산. 총액과 주요 항목별 산출 내역."
+    },
+    {
+      "key": "기대_효과",
+      "placeholder": "◆기대 효과 항목◆",
+      "type": "sequential",
+      "max_count": 4,
+      "required": true,
+      "description": "Ⅵ. 기대 효과 항목 (1./2./3./4.). 양식에 4자리. 계획 추진을 통해 얻을 수 있는 효과."
+    }
+  ],
+  "notes": [
+    "운영 계획서는 보고서(report)와 유사한 구조이지만 더 단순하고 작성하기 쉬운 양식이다. 정식 보고서가 필요하면 'report' 양식을, 간이 계획서가 필요하면 'plan' 양식을 사용한다.",
+    "추진 일정 표는 3열(시기·내용·담당)로 구성되며, 일정_시기·일정_내용·일정_담당 리스트의 N번째 항목이 같은 행에 들어간다.",
+    "이 양식은 python-hwpx로 생성된 단순한 구조라 한컴오피스에서 디자인(머리글, 표 테두리, 강조 등)을 보완하는 것을 권장."
+  ]
+}
